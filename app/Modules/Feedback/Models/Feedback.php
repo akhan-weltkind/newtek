@@ -5,6 +5,35 @@ use App\Models\Model;
 use Kyslik\ColumnSortable\Sortable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * App\Modules\Feedback\Models\Feedback
+ *
+ * @property int $id
+ * @property string $lang
+ * @property string $date
+ * @property int $ip
+ * @property string $name
+ * @property string $email
+ * @property string $message
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model active()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model admin()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model filtered()
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback order()
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback sortable($defaultSortParameters = null)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereDate($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereIp($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereLang($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereMessage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Feedback\Models\Feedback whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Feedback extends Model
 {
 

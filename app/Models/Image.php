@@ -26,11 +26,14 @@ trait Image{
         return $this->imagePath('full');
     }
 
+    public function imagePath($slug , $field = false){
 
-    public function imagePath($slug){
-
-        $image = $this->{$this->imageField()} ;
-
+        if ($field) {
+            $image = $this->{$field};
+        }
+        else {
+            $image = $this->{$this->imageField()} ;
+        }
         if (!$image){
             return false;
         }

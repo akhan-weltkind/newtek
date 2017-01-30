@@ -22,7 +22,7 @@ class ModuleServiceProvider extends ModuleProvider
             return new \App\Modules\Tree\Models\TreeRepository;
         });
 
-        $this->app->make('view')->composer('tree::menu', 'App\Modules\Tree\Http\ViewComposers\MenuComposer');
+        $this->app->make('view')->composer(['tree::menu','tree::menu-mobile'], 'App\Modules\Tree\Http\ViewComposers\MenuComposer');
         $this->app->make('view')->composer('tree::breadcrumbs', 'App\Modules\Tree\Http\ViewComposers\BreadcrumbsComposer');
 
     }

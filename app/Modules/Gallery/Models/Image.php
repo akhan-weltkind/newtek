@@ -3,6 +3,31 @@ namespace App\Modules\Gallery\Models;
 use App\Models\Model;
 use App\Models\Image as Img;
 
+/**
+ * App\Modules\Gallery\Models\Image
+ *
+ * @property int $id
+ * @property string $image
+ * @property int $position
+ * @property int $parent_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read mixed $image_full
+ * @property-read mixed $image_mini
+ * @property-read mixed $image_thumb
+ * @property-read \App\Modules\Gallery\Models\Gallery $parent
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model active()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model admin()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model filtered()
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Gallery\Models\Image order()
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Gallery\Models\Image whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Gallery\Models\Image whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Gallery\Models\Image whereImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Gallery\Models\Image whereParentId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Gallery\Models\Image wherePosition($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Gallery\Models\Image whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Image extends Model
 {
 

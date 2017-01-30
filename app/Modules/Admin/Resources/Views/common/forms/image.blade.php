@@ -25,17 +25,20 @@
 @endpush
 
 <div class="images-list">
+    @if(isset($imageTitle))
+        {!! BootForm::label($imageTitle) !!}
+    @else
+        {!! BootForm::label(trans('admin::admin.image')) !!}
+    @endif
 
-    {!! BootForm::label(trans('admin::admin.image')) !!}
     <div class="clearfix"></div>
-
     @if ($entity->$field)
-    <div class="timeline-body">
 
-        @if ($entity->imagePath('full'))
-            <a href="{!!$entity->imagePath('full') !!}" rel="ajax"><img src="{!! $entity->imagePath('mini')?:$entity->imagePath('thumb') !!}"></a>
+    <div class="timeline-body">
+        @if ($entity->imagePath('full',$field))
+            <a href="{!!$entity->imagePath('full',$field) !!}" rel="ajax"><img src="{!! $entity->imagePath('mini',$field)?:$entity->imagePath('thumb',$field) !!}"></a>
         @else
-            <img src="{!! $entity->imagePath('mini')?:$entity->imagePath('thumb') !!}">
+            <img src="{!! $entity->imagePath('mini',$field)?:$entity->imagePath('thumb',$field) !!}">
         @endif
 
         <a class="btn btn-danger"
