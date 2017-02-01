@@ -19,7 +19,6 @@ class ModuleServiceProvider extends ModuleProvider
     {
         $this->app->register(RouteServiceProvider::class);
         $this->app->make('view')->composer('news::main', 'App\Modules\News\Http\ViewComposers\MainComposer');
-
     }
 
 

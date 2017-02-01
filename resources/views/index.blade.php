@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('page_content')
-<div class="row">
-    <div class="col-sm-8">
-        <div class="page-header">
-            <h1>{!! $meta->h1 !!}</h1>
-        </div>
-        <!-- Класс обычной текстовой страницы, которую будут писать пользователи-->
-        <div class="page-content">
-            {!! $page->content !!}
-        </div>
+
+    @include('slider::main')
+
+    <div class="wrapper">
+        @include('parts.about')
+        @include('parts.counts')
     </div>
-  @include('news::main')
-</div>
+    @include('parts.advantage')
+    <div class="wrapper">
+        @include('news::main')
+        @include('parts.details')
+    </div>
 @endsection

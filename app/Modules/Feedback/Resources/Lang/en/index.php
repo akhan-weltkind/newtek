@@ -12,8 +12,8 @@ return[
 
     'name'=>'Your name',
     'name_placeholder'=>'Enter your name',
-    'email'=>'Your e-mail',
-    'email_placeholder'=>'Enter your Email',
+    'email'=>'Your email',
+    'email_placeholder'=>'info@example.com',
 
     'message'=>'Message',
     'message_placeholder'=>'Enter a text',

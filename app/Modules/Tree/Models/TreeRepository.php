@@ -46,6 +46,11 @@ class TreeRepository
         return Model::active()->where('in_menu', 1)->where('depth', 1)->get();
     }
 
+    public function getFooterMenu()
+    {
+        return Model::active()->where('in_footer_menu', 1)->where('depth', 1)->get();
+    }
+
     public function getSelect()
     {
 

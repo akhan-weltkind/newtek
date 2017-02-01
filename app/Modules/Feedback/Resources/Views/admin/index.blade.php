@@ -8,7 +8,6 @@
 
 @section('filters')
     {!! BootForm::open([ 'route' => 'admin.settings.store', 'method' => 'post']) !!}
-
     <div class="box box-primary box-filters">
         <div class="box-header"></div>
         <div class="box-body">
@@ -25,6 +24,25 @@
                 {!! BootForm::text('settings[zoom]', trans('feedback::index.zoom'),  Settings::get('zoom')) !!}
             </div>
 
+            <div class="col-md-1 filters-button">
+                {!! BootForm::submit(trans('admin::admin.save')) !!}
+            </div>
+
+        </div>
+    </div>
+    {!! BootForm::close() !!}
+
+    {!! BootForm::open([ 'route' => 'admin.settings.store', 'method' => 'post']) !!}
+    <div class="box box-primary box-filters">
+        <div class="box-header"></div>
+        <div class="box-body">
+
+            <div class="col-md-3">
+                {!! BootForm::text('settings[feedback_email]', trans('feedback::index.feedback'),  Settings::get('feedback_email')) !!}
+                <p class="small">
+                    @lang('feedback::index.feedbackDescription')
+                </p>
+            </div>
             <div class="col-md-1 filters-button">
                 {!! BootForm::submit(trans('admin::admin.save')) !!}
             </div>

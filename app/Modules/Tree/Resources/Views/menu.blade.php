@@ -1,9 +1,6 @@
 @if (count($items))
     <nav class="menu">
         <ul class="menu__items">
-            @if ($page->parent_id)
-                <li class="menu__item menu-item__withoutDown"><a class="menu__item__link" href="{!! home() !!}">@lang('tree::index.home')</a></li>
-            @endif
             @foreach ($items as $item)
                 @if($item->children()->get()->isEmpty())
                     <li class="menu__item menu-item__withoutDown">

@@ -1,5 +1,5 @@
 <?php
 return[
-    'title'=>'Слайдер',
+    'title'=>trans('slider::admin.title'),
     'localization'=>true
 ];

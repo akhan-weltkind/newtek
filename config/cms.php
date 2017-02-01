@@ -14,6 +14,9 @@ return [
 
     'og-image'=>'/img/og_logo.png',
 
-    'admin_locale'=>'ru'
+    'admin_locale'=>'ru',
+
+    /* email от которого отправляются письма*/
+    'from_email' => 'noreply@weltkind.com'
 
 ];

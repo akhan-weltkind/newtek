@@ -1,42 +1,38 @@
-@extends('layouts.inner')
+@extends('layouts.list')
 
-@section('content')
-    <div class="news-list">
+@section('page_content')
+    <div class="wrapper">
+        @include('tree::breadcrumbs')
+        <h1 class="main__title">@yield('h1', @$meta->h1)</h1>
         @if (count($items))
             @foreach($items as $entity)
-                <div class="news-list__item">
-                    @if($entity->image_mini)
-                        <div class="news-list__left">
-                            <div class="news-list__image">
-                                <a href="{{route($page->slug.'.show', $entity)}}">
-                                    <img class="fit-cover" src="{{$entity->image_mini}}" alt="{{$entity->title}}">
-                                </a>
-                            </div>
+                @if($entity->image)
+                    <div class="news__point">
+                        <div class="news__point__pic">
+                            <img src="{!! home() !!}/uploads/news/thumb/{{ $entity->image }}" alt="pic">
                         </div>
-                    @endif
-
-                    <div class="news-list__right">
-                        <div class="news-list__top">
-                            <h2 class="news-list__title">
-                                <a href="{{route('news.show', $entity->id)}}">{{$entity->title}}</a>
-                            </h2>
-
-                            <div class="news-list__date">{!! Date::_('d.m.Y H:i:s') !!}
-                            </div>
+                        <div class="news__point__info">
+                            <span class="news__item__date">{{ date_format(date_create($entity->date), 'd.m.Y') }}</span>
+                            <h5 class="news__point__title link-dashed">{{ $entity->title }}</h5>
+                            <p class="news__point__text">{{ $entity->preview }}</p>
+                            <a class="news__point__mask" href="{{route($page->slug.'.show', $entity)}}"></a>
                         </div>
-                        <div class="news-list__content">
-                            <p>{{ nl2br(e($entity->preview)) }}</p>
-                        </div>
-                        <a class="news-list__link"
-                           href="{{route($page->slug.'.show', $entity)}}">@lang('news::index.read_more')</a>
                     </div>
-                </div>
+                @else
+                    <div class="news__point news__point_without-pic">
+                        <div class="news__point__info">
+                            <span class="news__item__date">{{ date_format(date_create($entity->date), 'd.m.Y') }}</span>
+                            <h5 class="news__point__title link-dashed">{{ $entity->title }}</h5>
+                            <p class="news__point__text">{{ $entity->preview }}</p>
+                            <a class="news__point__mask" href="{{route($page->slug.'.show', $entity)}}"></a>
+                        </div>
+                    </div>
+                @endif
             @endforeach
-            {{  $items->appends(\Request::except('page'))->links('common.paginate') }}
-
+                {{  $items->appends(\Request::except('page'))->links('common.paginate') }}
+            <div class="clear"></div>
         @else
             <p>@lang('news::index.no_records')</p>
         @endif
-
     </div>
 @endsection

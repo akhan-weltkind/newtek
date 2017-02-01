@@ -1,10 +1,13 @@
 @if ($paginator->hasPages())
     <noindex>
-        <nav class="text-center">
-            <ul class="pagination">
+        <div class="pagination">
+            <ul>
                 @if (!$paginator->onFirstPage())
-                    <li>
-                        <a href="{{ $paginator->previousPageUrl() }}">&larr;</a></li>
+                    <li class="pagination__item pagination__item_larr">
+                        <a href="{{ $paginator->previousPageUrl() }}" aria-label="Previous" class="pagination__link">
+                            @lang('pagination.previous')
+                        </a>
+                    </li>
                 @endif
 
                 {{-- Pagination Elements --}}
@@ -18,19 +21,27 @@
                     @if (is_array($element))
                         @foreach ($element as $page => $url)
                             @if ($page == $paginator->currentPage())
-                                <li><span>{{ $page }}</span></li>
+                                <li class="pagination__item pagination__item_current"><span>{{ $page }}</span></li>
                             @else
-                                <li><a href="{{ $url }}">{{ $page }}</a></li>
+                                <li class="pagination__item">
+                                    <a href="{{ $url }}" class="pagination__link">
+                                        {{ $page }}
+                                    </a>
+                                </li>
                             @endif
                         @endforeach
                     @endif
                 @endforeach
 
                 @if ($paginator->hasMorePages())
-                    <li><a href="{{ $paginator->nextPageUrl() }}">&rarr;</a></li>
+                    <li class="pagination__item pagination__item_rarr">
+                        <a href="#" aria-label="Next" class="pagination__link">
+                            @lang('pagination.next')
+                        </a>
+                    </li>
                 @endif
             </ul>
-        </nav>
+        </div>
     </noindex>
 @endif
 

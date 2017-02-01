@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'title'     => 'Слайдер',
     'fields'    => [
         'title'             => 'Заголовок',
         'titleColor'        => 'Цвет заголовка',

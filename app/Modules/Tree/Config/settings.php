@@ -8,5 +8,9 @@ return [
         "articles"=>trans('articles::admin.title'),
         "gallery"=>trans('gallery::admin.title'),
         "feedback"=>trans('feedback::admin.title')],
-    "templates"=> ["inner"=>trans('tree::admin.templates.inner'), "index"=>trans('tree::admin.templates.index')]
+    "templates"=> [
+        "inner"=>trans('tree::admin.templates.inner'),
+        "index"=>trans('tree::admin.templates.index'),
+        "list"=>trans('tree::admin.templates.list'),
+        "sidebarCategory"=>trans('tree::admin.templates.sidebarCategory')],
 ];

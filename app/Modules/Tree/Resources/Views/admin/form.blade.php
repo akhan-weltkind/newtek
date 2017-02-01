@@ -13,6 +13,7 @@
 
 {!! BootForm::open(['model' => $entity, 'store' => $routePrefix.'store', 'update' => $routePrefix.'update']) !!}
 
+
 <div class="col-md-6">
     {!! BootForm::text('title', trans('tree::admin.title_page')) !!}
 </div>
@@ -30,30 +31,42 @@
 </div>
 
 <div class="col-md-6">
-    {!! BootForm::hidden('active', 0) !!}
-    {!! BootForm::checkbox('active', trans('admin::fields.active'), 1) !!}
-</div>
-
-<div class="col-md-6">
-    {!! BootForm::hidden('in_menu', 0) !!}
-    {!! BootForm::checkbox('in_menu', trans('tree::admin.in_menu'), 1) !!}
-
-</div>
-
-
-<div class="col-md-6">
     {!! BootForm::select('module',  trans('tree::admin.module'), module_config('settings.modules')) !!}
 </div>
 
 <div class="col-md-6">
     {!! BootForm::select('template',  trans('tree::admin.template'), module_config('settings.templates')) !!}
-
 </div>
 
 <div class="col-md-6">
     @if (Request::get('parent') || $entity->parent_id)
     {!! BootForm::select('parent_id',  trans('tree::admin.parent'), Tree::getSelect(), Request::get('parent')) !!}
     @endif
+</div>
+
+<div class="col-md-6">
+    {!! BootForm::hidden('in_menu', 0) !!}
+    {!! BootForm::checkbox('in_menu', trans('tree::admin.in_menu'), 1) !!}
+</div>
+
+<div class="clearfix"></div>
+
+<div class="col-md-6">
+    {!! BootForm::select('footer_column',  'Номер колонки в футере', [
+        1 => 'Первая колонка',
+        2 => 'Вторая колонка',
+        3 => 'Третья колонка'
+    ]) !!}
+</div>
+
+<div class="col-md-6">
+    {!! BootForm::hidden('in_footer_menu', 0) !!}
+    {!! BootForm::checkbox('in_footer_menu', trans('tree::admin.in_footer_menu'), 1) !!}
+</div>
+
+<div class="col-md-6 col-md-offset-6">
+    {!! BootForm::hidden('active', 0) !!}
+    {!! BootForm::checkbox('active', trans('admin::fields.active'), 1) !!}
 </div>
 
 @include('admin::common.forms.seo')

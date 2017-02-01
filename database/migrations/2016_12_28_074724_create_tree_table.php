@@ -30,6 +30,8 @@ class CreateTreeTable extends Migration {
       $table->string('template');
       $table->tinyInteger('active');
       $table->tinyInteger('in_menu');
+      $table->tinyInteger('in_footer_menu');
+      $table->tinyInteger('footer_column');
 
       $table->string('meta_title');
       $table->string('meta_h1');

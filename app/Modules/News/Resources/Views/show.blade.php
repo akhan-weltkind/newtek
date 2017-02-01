@@ -1,19 +1,17 @@
-@extends('layouts.inner')
+@extends('layouts.full')
 
 @section('content')
-    <div class="news-full">
-        @if ($entity->image_thumb)
-            <div class="news-full__photo">
-                <a href="{{$entity->image_full}}"><img class="fit-cover" src="{{$entity->image_full}}" alt="{{$entity->title}}"></a>
+    <div class="post">
+        <div class="post__content">
+            <span class="news__item__date">{{Date::_('d.m.Y',$entity->date)}}</span>
+            @if ($entity->image_thumb)
+            <div class="post__pic">
+                <img src="{{$entity->image_full}}" alt="pic">
             </div>
-        @endif
-
-        <div class="news-full__date">{{Date::_('d.m.Y H:i:s')}}
-        </div>
-        <div class="news-full__content">
-            {!! $entity->content !!}
-
-        </div>
-        <a class="get-back" href="{{route($page->slug)}}">@lang('news::index.back')</a>
-    </div>
+            @endif
+                {!! $entity->content !!}
+            </div>
+            <a class="post__back" href="{{route($page->slug)}}">@lang('news::index.back')</a>
+            @include('parts.social')
+    </div>  <!-- post -->
 @endsection

@@ -8,6 +8,7 @@ return [
     'slug' => 'Page slug',
     'slug_short' => 'Slug',
     'in_menu' => 'Show in main menu',
+    'in_footer_menu' => 'Show in footer menu',
     'module' => 'Module',
     'template' => 'Template',
     'parent' => 'Parent page',
@@ -15,7 +16,9 @@ return [
     'create_root' => 'Create root page',
 
     'templates' => [
-        'inner'=>'Inner page',
-        'index'=>'Home page'
+        'inner'             =>'Inner page',
+        'index'             =>'Home page',
+        'list'              => 'Page with list',
+        'sidebarCategory'   => 'Inner page with category'
     ]
 ];
