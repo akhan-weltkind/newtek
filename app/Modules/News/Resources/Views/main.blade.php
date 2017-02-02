@@ -14,7 +14,7 @@
                     <p>
                         {!! nl2br(e($item->preview)) !!}
                     </p>
-                    <a class="news-main__item__mask" href="#"></a>
+                    <a class="news-main__item__mask" href="{!! route('news.show', $item->id) !!}"></a>
                 </div>
             @endforeach
         </div>
