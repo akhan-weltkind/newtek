@@ -14,6 +14,7 @@
                     <p>
                         {!! nl2br(e($item->preview)) !!}
                     </p>
+                    <a class="news-main__item__mask" href="#"></a>
                 </div>
             @endforeach
         </div>
