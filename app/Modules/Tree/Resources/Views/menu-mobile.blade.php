@@ -2,9 +2,6 @@
 
     <nav id="menuVertical" class="menuVertical">
         <ul>
-            @if ($page->parent_id)
-                <li><a href="{!! home() !!}">@lang('tree::index.home')</a></li>
-            @endif
             @foreach ($items as $item)
                 @if($item->children()->get()->isEmpty())
                     <li><a href="{!! URL::route($item->slug) !!}"> {{$item->title}}</a></li>

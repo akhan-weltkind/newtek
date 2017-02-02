@@ -5,7 +5,9 @@
 
 @push('js')
 
-<script src="/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
+{{-- не в коем случае нельзя расскоментировать так как происходит конфликт js файлов с jquery-ui.js !!!!!! --}}
+
+{{--<script src="/adminlte/plugins/datepicker/bootstrap-datepicker.js"></script>
 <script src="/adminlte/plugins/datepicker/locales/bootstrap-datepicker.ru.js"></script>
 
 <script src="/adminlte/plugins/input-mask/jquery.inputmask.js"></script>
@@ -29,6 +31,6 @@
 
         @endforeach
     });
-</script>
+</script>--}}
 
 @endpush

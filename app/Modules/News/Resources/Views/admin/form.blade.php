@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-md-6">
-        {!! BootForm::text('date', trans('admin::fields.date'), $entity->date?null:date('Y-m-d')) !!}
+        {!! BootForm::date('date',trans('admin::fields.date'),(new DateTime($entity->date))->format('Y-m-d')) !!}
     </div>
 
     <div class="col-md-6">

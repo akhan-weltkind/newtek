@@ -11,8 +11,6 @@ class MenuComposer
 
     public function __construct(TreeRepository $repository){
         $this->repository = $repository;
-
-
     }
 
     public function compose(View $view){

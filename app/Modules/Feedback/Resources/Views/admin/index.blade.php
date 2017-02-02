@@ -39,7 +39,7 @@
 
             <div class="col-md-3">
                 {!! BootForm::text('settings[feedback_email]', trans('feedback::index.feedback'),  Settings::get('feedback_email')) !!}
-                <p class="small">
+                <p class="help-block">
                     @lang('feedback::index.feedbackDescription')
                 </p>
             </div>
