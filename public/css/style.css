@@ -1053,6 +1053,7 @@ font-size: 14px;
 width: 31%;
 float: left;
 margin-right: 41px;
+position: relative;
 }
 
 .news__item:last-child {
