@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.29 on 2017-01-30.
+ * Generated for Laravel 5.3.29 on 2017-02-06.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14171,8 +14171,85 @@ namespace {
          *
          * @static 
          */
+        public static function getFooterMenu(){
+            return \App\Modules\Tree\Models\TreeRepository::getFooterMenu();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
         public static function getSelect(){
             return \App\Modules\Tree\Models\TreeRepository::getSelect();
+        }
+        
+    }
+
+
+    class Category extends \App\Modules\Category\Facades\Category{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getRoutes(){
+            return \App\Modules\Category\Models\CategoryRepository::getRoutes();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getMenus(){
+            return \App\Modules\Category\Models\CategoryRepository::getMenus();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function get($id){
+            return \App\Modules\Category\Models\CategoryRepository::get($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getRoot(){
+            return \App\Modules\Category\Models\CategoryRepository::getRoot();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getSelect(){
+            return \App\Modules\Category\Models\CategoryRepository::getSelect();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getFirstLevel(){
+            return \App\Modules\Category\Models\CategoryRepository::getFirstLevel();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getName($id){
+            return \App\Modules\Category\Models\CategoryRepository::getName($id);
         }
         
     }

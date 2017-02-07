@@ -1,10 +1,10 @@
 @if (count($errors) > 0)
         <!-- Список ошибок формы -->
-<div class="alert alert-danger">
+<div class="error">
     <strong>@lang('index.form_error')</strong>
 </div>
 @endif
 
 @if (session()->has('message'))
-    <div class="alert alert-info">{{ session('message') }}</div>
+    <div class="alert alert-success">{{ session('message') }}</div>
 @endif

@@ -7,6 +7,7 @@ use App\Modules\Feedback\Models\Feedback;
 use App\Modules\Settings\Facades\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Validator;
 use Mail;
 
 class IndexController extends Controller
@@ -17,6 +18,40 @@ class IndexController extends Controller
     public function index(){
 
         return view('feedback::index');
+    }
+
+    public function modal(Request $request){
+
+        $v = Validator::make($request->all(), $this->getRules(), $this->getMessages());
+
+        if ($v->fails())
+        {
+            return view('feedback::main')->withErrors($v->errors());
+        }
+
+        $arr = $request->all();
+
+        $arr['ip'] = ip2long($request->ip());
+        $arr['date'] = date('Y-m-d H:i:s');
+
+        $this->getModel()->create($arr);
+
+        Mail::send(
+            'feedback::email',
+            [ 'data' => $arr ],
+            function ($message) {
+                $emails = explode(',', Settings::get('feedback_email'));
+
+                $message
+                    ->to($emails)
+                    ->from('no-reply@weltkind.com', widget('email.name'))
+                    ->subject(trans('feedback::index.emails.title'));
+            }
+        );
+
+        echo '<div class="alert alert-success">' .trans('feedback::index.success') . '</div>';
+        die;
+
     }
 
     public function store(Request $request){
@@ -46,11 +81,11 @@ class IndexController extends Controller
             ->back()
             ->with(
                 'message',
-                'Ваше сообщение успешно отправлено. Наши менеджеры свяжуться с вами в ближайшее время.'
+                trans('feedback::index.success')
             );
     }
 
-    public function getRules($request){
+    public function getRules(){
         return [
             'name'=>'required|max:255',
             'email'=>'required|email',
@@ -63,7 +98,6 @@ class IndexController extends Controller
         return [
             'required'=>'Это поле обязательно для заполнения',
             'email'=>'Укажите корректный электронный адрес'
-
         ];
     }
 

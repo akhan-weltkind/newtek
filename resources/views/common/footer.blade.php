@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="footer__top">
             <div class="footer__logo">
-                <a href="{!! home() !!}"><img src="{!! home() !!}/img/footer-logo.jpg" alt="logo"></a>
+                <a href="{!! home() !!}"><img src="{{ asset('/img/footer-logo.jpg') }}" alt="logo"></a>
             </div>
             @include('tree::footer-menu')
         </div>  <!-- footer__top -->
@@ -14,7 +14,7 @@
                 @include('common.footer-language')
                 <div class="footer__item footer__item_time">
                     {!! widget('footer.contacts') !!}
-                    <a class="callback modalbox" href="#feedback">@lang('index.feedback')</a>
+                    <a class="callback modalbox" href="#js-feedback">@lang('index.feedback')</a>
                 </div>
                 <div class="footer__item">
 							<span class="develop">@lang('index.siteDev') -

@@ -11,6 +11,12 @@ return[
     'aboutCertificates' => 'Сертификаты <br>и гарантии качества',
     'selectLang'        => 'Choose language',
     'feedback'          => 'Feedback',
-    'siteDev'           => 'Site development'
+    'siteDev'           => 'Site development',
+    'home'              => 'Back to home',
+    'where_buy'         => 'Where buy',
+    'details'           => [
+        'about' => 'Learn more <br />about solar modules',
+        'quality' => 'Certificates <br />and quality assurance',
+    ]
 
 ];

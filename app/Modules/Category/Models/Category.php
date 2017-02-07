@@ -58,6 +58,7 @@ use Kyslik\ColumnSortable\Sortable;
  * @method static \Illuminate\Database\Query\Builder|\Baum\Node withoutRoot()
  * @method static \Illuminate\Database\Query\Builder|\Baum\Node withoutSelf()
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Modules\Catalog\Models\Document[] $catalogs
  */
 class Category extends ParentTree{
 
@@ -65,4 +66,7 @@ class Category extends ParentTree{
 
     protected $table = 'categories';
 
+    public function catalogs(){
+        return $this->belongsToMany('App\Modules\Catalog\Models\Document', 'catalog_id');
+    }
 }

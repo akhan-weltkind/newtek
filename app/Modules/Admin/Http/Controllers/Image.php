@@ -51,7 +51,6 @@ trait Image
     {
 
         $config = $this->getConfig();
-
         foreach ($config as $field => $cnf) {
 
             if (Request::hasFile($field)) {
@@ -70,6 +69,7 @@ trait Image
                 }
             }
         }
+
     }
 
     protected function getConfig()

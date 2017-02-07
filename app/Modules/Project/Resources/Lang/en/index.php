@@ -1,4 +1,5 @@
 <?php
     return [
-        'back'=>'Back to projects list'
+        'title' => 'Projects',
+        'back'  => 'Back to projects list'
     ];

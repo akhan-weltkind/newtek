@@ -5,7 +5,7 @@ return [
     ],
 
     'items' => [
-        ['icon' => 'fa-list-ul', 'priority'=>1, 'group'=>'catalog', 'route' => 'admin.category.index', 'title' => trans('category::admin.title')]
+        ['icon' => 'fa-th-list ', 'priority'=>1, 'group'=>'catalog', 'route' => 'admin.category.index', 'title' => trans('category::admin.title')]
     ]
 
 

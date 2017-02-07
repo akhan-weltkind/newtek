@@ -31,9 +31,13 @@ class CategoryRepository
         return $routes;
     }
 
-    public function get($slug)
+    public function getMenus(){
+        return Model::whereDepth(1)->get();
+    }
+
+    public function get($id)
     {
-        return Model::where('slug', $slug)->first();
+        return Model::whereId($id);
     }
 
     public function getRoot()
@@ -47,11 +51,25 @@ class CategoryRepository
         $keyed = collect();
 
         Model::admin()->get()->mapWithKeys(function ($item) use ($keyed) {
-            $keyed[$item->id] = str_repeat('-', $item->depth) . $item->title;
+            if($item->depth != 0){
+                $keyed[$item->id] = str_repeat('-', $item->depth) . $item->title;
+            }
         });
 
         return $keyed;
+    }
 
+    public function getFirstLevel(){
+
+        $result = Model::where('depth',1)->active()->get();
+
+        return $result;
+    }
+
+    public function getName($id){
+        $result = Model::pluck('name')->where('id',$id)->first();
+
+        return $result;
     }
 
 }

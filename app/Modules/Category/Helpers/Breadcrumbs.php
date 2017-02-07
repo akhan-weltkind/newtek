@@ -1,5 +1,5 @@
 <?php
-namespace App\Modules\Tree\Helpers;
+namespace App\Modules\Catalog\Helpers;
 
 class Breadcrumbs{
 

@@ -122,3 +122,11 @@ table.table td.controls{
 .filters-button{
     padding-left: 130px;
 }
+
+.border-blue {
+    border: 1px solid #3c8dbc;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}

@@ -103,50 +103,69 @@ $(document).ready(function () {
             });
     });
 
-             // Слайдер проекты
-        $('.project__slider').slick({
-            slidesToScroll:1,
-            slidesToShow:1,
-            pauseOnHover:true,
-            arrows:true,
-            dots:false,
-            // autoplay:true,
- 
+         // Слайдер проекты
+    $('.project__slider').slick({
+        slidesToScroll:1,
+        slidesToShow:1,
+        pauseOnHover:true,
+        arrows:true,
+        dots:false,
+        // autoplay:true,
+
+    });
+
+    $(".single_image").fancybox();
+
+    $("a[rel=group]").fancybox({
+           'transitionIn' : 'none',
+            'transitionOut' : 'none',
+           'titlePosition' : 'over',
+            'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
+                return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+           }
         });
 
-        $(".single_image").fancybox();
+    $('input, select').styler();
 
-        $("a[rel=group]").fancybox({
-               'transitionIn' : 'none',
-                'transitionOut' : 'none',
-               'titlePosition' : 'over',
-                'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
-                    return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-               }
+
+    // модалка
+    $(document).ready(function(){
+        $(".modalbox").fancybox();
+        $("#f_contact").submit(function(e){
+            var url  = $(this).attr('action')
+                data = $(this).serialize();
+
+            e.preventDefault();
+            console.log();
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: data,
+                success: function(data){
+                    $('#js-feedback').html(data);
+                    console.log(data);
+                },
+                error: function (data) {
+                    //console.log(JSON.parse(data.responseText));
+                    $('#js-feedback').html(data);
+                    console.log(data);
+                }
             });
+            console.log('submit');
 
-        $('input, select').styler();
-
-
-        // модалка
-        $(document).ready(function(){
-            $(".modalbox").fancybox();
-            $("#f_contact").submit(function(){ return false; });
-            $("#f_send").on("click", function(){
-                 
-                // тут дальнейшие действия по обработке формы
-                // закрываем окно, как правило делать это нужно после обработки данных
-                $("#f_contact").fadeOut("fast", function(){
-                    $(this).before("<p><strong>Ваше сообщение отправлено!</strong></p>");
-                    setTimeout("$.fancybox.close()", 1000);
-                });
-            });
         });
+        /*$("#f_send").on("click", function(){
+
+            // тут дальнейшие действия по обработке формы
+            // закрываем окно, как правило делать это нужно после обработки данных
+            /!*$("#f_contact").fadeOut("fast", function(){
+                $(this).before("<p><strong>Ваше сообщение отправлено!</strong></p>");
+                setTimeout("$.fancybox.close()", 1000);
+            });*!/
+        });*/
+    });
 
 
 
-    
-
-  
 });
 

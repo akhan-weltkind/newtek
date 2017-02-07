@@ -73,7 +73,7 @@
             <div class="wrapper">
                 <header class="header">
                     <div class="logo">
-                        <a class="logo-back" href="{!! home() !!}">Вернуться на главную</a>
+                        <a class="logo-back" href="{!! home() !!}">@lang('index.home')</a>
                         <a class="logo-a" href="{!! home() !!}"></a>
                     </div>
                     <div class="header__info">
@@ -81,65 +81,12 @@
                             @include('common.languages')
                             <div class="header__contacts">
                                 <span class="header__contacts_phone">{!! widget('head.phone') !!}</span>
-                                <a class="header__contacts_feedback modalbox" href="#feedback">Обратная связь</a>
-                                <div class="feedback" id="feedback">
-                                    <form id="f_contact" name="contact" action="#" method="post">
-                                        <h6>Напишите нам:</h6>
-                                        <div class="b-form">
-                                            <div class="b-form__item">
-                                                <div class="b-form-item b-form-item_type_text b-form-item_style_default">
-                                                    <label for="name" class="b-form-item__label">Ваше имя:
-                                                        <span class="form-item__label_required">*</span>
-                                                    </label>
-                                                    <div class="b-form-item__input">
-                                                        <input type="text" name="name" placeholder="Введите ваше имя" id="name">
-                                                    </div>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                            <div class="b-form__item">
-                                                <div class="b-form-item b-form-item_type_email b-form-item_style_default">
-                                                    <label for="email" class="b-form-item__label">Ваш email:
-                                                        <span class="form-item__label_required">*</span>
-                                                    </label>
-                                                    <div class="b-form-item__input">
-                                                        <input type="email" name="email" placeholder="info@example.com" id="email" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" title="Введите верный адрес email">
-                                                    </div>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                            <div class="b-form__item">
-                                                <div class="b-form-item b-form-item_type_textarea b-form-item_style_default">
-                                                    <label for="textarea" class="b-form-item__label">Сообщение:
-                                                        <span class="form-item__label_required">*</span>
-                                                    </label>
-                                                    <div class="b-form-item__input">
-                                                        <textarea name="textarea" cols="80" rows="24" placeholder="Введите сообщение" id="textarea"></textarea>
-                                                    </div>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                            <div class="b-form__item">
-                                                <div class="b-form-item b-form-item_type_captcha b-form-item_style_default">
-                                                    <label for="captcha" class="b-form-item__label">Спам фильтр<span> *</span></label>
-                                                    <div class="b-form-item__input-image"><a href="#" title="Reload image"><img src="img/captcha.png" height="40" width="120" alt="Captcha"></a></div>
-                                                    <div class="b-form-item__input">
-                                                        <input type="text" name="captcha" id="captcha">
-                                                    </div>
-                                                    <div class="clear"></div>
-                                                </div>
-                                            </div>
-                                            <div class="b-form__button">
-                                                <button type="button" class="b-button b-button_block b-button_color_green b-button_size_lg b-button_bold" id="f_send">Отправить</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>  <!-- feedback -->
-                                <span class="header__contacts_buy">Где купить</span>
-                                <div class="search">
-                                    <input class="search__input" type="text" placeholder="поиск">
-                                    <button class="search_btn"></button>
+                                <a class="header__contacts_feedback modalbox" href="#js-feedback">@lang('index.feedback')</a>
+                                <div class="feedback" id="js-feedback">
+                                    @include('feedback::main')
                                 </div>
+                                <a href="{{ home() }}/contacts" class="header__contacts_buy">@lang('index.where_buy')</a>
+                                @include('search::main')
                             </div>
                         </div>
                         <div class="header__info_bot">

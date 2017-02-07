@@ -9,7 +9,7 @@
                 @if($entity->image)
                     <div class="news__point">
                         <div class="news__point__pic">
-                            <img src="{!! home() !!}/uploads/news/thumb/{{ $entity->image }}" alt="pic">
+                            <img src="{{$entity->image_full}}" alt="pic">
                         </div>
                         <div class="news__point__info">
                             <span class="news__item__date">{{ date_format(date_create($entity->date), 'd.m.Y') }}</span>

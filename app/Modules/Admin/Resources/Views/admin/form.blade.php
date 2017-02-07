@@ -1,8 +1,15 @@
 @extends('admin::layouts.app')
 
 @section('form_js')
-@include('admin::common.forms.datepicker', ['fields'=>[['id'=>'date', 'date'=>date('Y-m-d')]]])
-@include('admin::common.forms.ckeditor', ['fields'=>[['id'=>'content']]])
+    @include('admin::common.forms.datepicker', ['fields'=>[['id'=>'date', 'date'=>date('Y-m-d')]]])
+    @include('admin::common.forms.ckeditor',
+        [
+            'fields' => [
+                ['id' => 'content'],
+                ['id' => 'technical'],
+                ['id' => 'electrical']
+            ]
+        ])
 @endsection
 
 @section('title')

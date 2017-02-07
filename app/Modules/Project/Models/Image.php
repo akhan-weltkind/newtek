@@ -4,6 +4,27 @@ namespace App\Modules\Project\Models;
 use App\Models\Model;
 use App\Models\Image as Img;
 
+/**
+ * App\Modules\Project\Models\Image
+ *
+ * @property int $id
+ * @property int $project_id
+ * @property int $position
+ * @property string $image
+ * @property-read mixed $image_full
+ * @property-read mixed $image_mini
+ * @property-read mixed $image_thumb
+ * @property-read \App\Modules\Project\Models\Project $parent
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model active()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model admin()
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Model filtered()
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Project\Models\Image order()
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Project\Models\Image whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Project\Models\Image whereImage($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Project\Models\Image wherePosition($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Project\Models\Image whereProjectId($value)
+ * @mixin \Eloquent
+ */
 class Image extends Model
 {
     use Img;

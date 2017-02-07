@@ -7,6 +7,8 @@ return [
      */
     'supported-locales'      => ['en', 'ru'],
 
+    'default'                => 'ru',
+
     'accept-language-header' => true,
 
     'hide-default-in-url'    => true,

@@ -2373,6 +2373,22 @@ text-align: center;
 	left: 0;
 }
 
+.error,
+.b-form__errors li {
+    color: #ff0000;
+}
+
+.alert-success {
+    color: #00a65a;
+}
+
+.center-block {
+    text-align: center;
+}
+
+
+
+
 
 
 

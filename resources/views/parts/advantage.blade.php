@@ -1,27 +1,27 @@
 <div class="info">
     <div class="wrapper">
-        <h2 class="info__title">Преимущества нашей продукции</h2>
-        <p class="info__descr">Темная материя растягивает гравитационный кристалл - все дальнейшее далеко выходит за рамки текущего исследования</p>
+        <h2 class="info__title">@lang('index.advantage.title')</h2>
+        <p class="info__descr">@lang('index.advantage.infoDesc')</p>
         <div class="info__items">
             <div class="info__item__left">
                 <div class="info__item__descr info__item__descr_equip">
-                    <p>Производство на автоматизированной линии от мирового производителя — немецкой компании <i>SCHMID Group</i></p>
+                    <p>@lang('index.advantage.infoDescEquip') <i>SCHMID Group</i></p>
                 </div>
                 <div class="info__item__descr info__item__descr_strength">
-                    <p>Высокий уровень механической прочности и минимальный уровень деградации кристалов</p>
+                    <p>@lang('index.advantage.infoDescStrenght')</p>
                 </div>
             </div>
             <div class="info__item__middle">
                 <div class="info__item_wrap">
-                    <img src="img/content/product.png" alt="product">
+                    <img src="{{ asset('img/content/product.png') }}" alt="product">
                 </div>
             </div>
             <div class="info__item__right">
                 <div class="info__item__descr info__item__descr_modul">
-                    <p>Для производства модулей используются кремниевые ячейки самого высокого <i>качества Grade A</i></p>
+                    <p>@lang('index.advantage.descModule')</p>
                 </div>
                 <div class="info__item__descr info__item__descr_sertif">
-                    <p>Продукция сертифицирована по немецким и международным стандартам и <i>соответствуют всем нормам безопасности</i></p>
+                    <p>@lang('index.advantage.descSerttif')</p>
                 </div>
             </div>
         </div>

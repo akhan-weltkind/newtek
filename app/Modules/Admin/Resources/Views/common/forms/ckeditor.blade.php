@@ -2,7 +2,6 @@
 <script src="/adminlte/plugins/ckeditor/ckeditor.js"></script>
 <script src="/adminlte/plugins/ckeditor/adapters/jquery.js"></script>
 <script>
-
     @foreach ($fields as $field)
     $('#{!! $field['id'] !!}').ckeditor({
         filebrowserImageBrowseUrl: '/{{ config('cms.uri') }}/laravel-filemanager?type=Images',

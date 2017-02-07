@@ -46,7 +46,8 @@
 
             @include('common.errors')
             <div class="b-form__item">
-                <div class="b-form-item b-form-item_type_text b-form-item_style_default">
+                <div class="b-form-item b-form-item_type_text b-form-item_style_default
+                    {{ $errors->has('name')?'b-form-item_status_error ':null }}">
                     <label for="name" class="b-form-item__label">@lang('feedback::index.name')
                         <span class="form-item__label_required">*</span>
                     </label>
@@ -64,7 +65,8 @@
                 </div>
             </div>
             <div class="b-form__item">
-                <div class="b-form-item b-form-item_type_email b-form-item_style_default">
+                <div class="b-form-item b-form-item_type_email b-form-item_style_default
+                    {{ $errors->has('email')?'b-form-item_status_error ':null }}">
                     <label for="email" class="b-form-item__label">@lang('feedback::index.email')
                         <span class="form-item__label_required">*</span>
                     </label>
@@ -81,7 +83,8 @@
                 </div>
             </div>
             <div class="b-form__item">
-                <div class="b-form-item b-form-item_type_textarea b-form-item_style_default">
+                <div class="b-form-item b-form-item_type_textarea b-form-item_style_default
+                    {{ $errors->has('message')?'b-form-item_status_error ':null }}">
                     <label for="message" class="b-form-item__label">@lang('feedback::index.message')
                         <span class="form-item__label_required">*</span>
                     </label>
@@ -98,7 +101,8 @@
                 </div>
             </div>
             <div class="b-form__item">
-                <div class="b-form-item b-form-item_type_captcha b-form-item_style_default">
+                <div class="b-form-item b-form-item_type_captcha b-form-item_style_default
+                    {{ $errors->has('captcha')?'b-form-item_status_error ':null }}">
                     <label for="captcha" class="b-form-item__label">
                         @lang('feedback::index.captcha')
                         <span> *</span>
@@ -127,96 +131,3 @@
     </div>
 </div>
 @endsection
-
-{{--
-@section('content')
-    <div class="feedback">
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="feedback__left">
-                    <div class="feedback__title">@lang('feedback::index.contacts')</div>
-                    <div class="feedback__item">
-
-                        {!! $page->content !!}
-                    </div>
-                    <div class="feedback__title">@lang('feedback::index.location')</div>
-                    <div class="feedback__item">
-                        <div class="feedback__map" id="map">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="feedback__right">
-                    {!! Form::open(['action' => '\App\Modules\Feedback\Http\Controllers\IndexController@store'])  !!}
-                    <div class="feedback__title">@lang('feedback::index.form_title')
-                    </div>
-
-                    @include('common.errors')
-
-                    <div class="feedback__item">
-                        <label class="feedback__label" for="name">@lang('feedback::index.name') *</label>
-                        <input type="text" name="name" placeholder="@lang('feedback::index.name_placeholder')" id="name"
-                               value="{{old('name')}}">
-
-                        @if ($errors->has('name'))
-                            <div class="feedback__error">
-                                {{ $errors->first('name') }}
-                            </div>
-                        @endif
-
-                    </div>
-                    <div class="feedback__item">
-                        <label class="feedback__label" for="email">@lang('feedback::index.email') *</label>
-                        <input type="text" name="email" placeholder="@lang('feedback::index.email_placeholder')" id="email"
-                               value="{{old('email')}}">
-                        @if ($errors->has('email'))
-                            <div class="feedback__error">
-                                {{ $errors->first('email') }}
-                            </div>
-                        @endif
-                    </div>
-                    <div class="feedback__item">
-                        <label class="feedback__label" for="message">@lang('feedback::index.message') *</label>
-                             <textarea name="message" cols="80" rows="10" placeholder="@lang('feedback::index.message_placeholder')"
-                                       id="message">{{old('message')}}</textarea>
-                        @if ($errors->has('message'))
-                            <div class="feedback__error">
-                                {{ $errors->first('message') }}
-                            </div>
-                        @endif
-
-                    </div>
-                    <div class="feedback__item">
-                        <label class="feedback__label">@lang('feedback::index.captcha') *
-                        </label>
-
-                        <div class="captcha">
-                            <div class="captcha__left">
-                                <div class="captcha__image">
-                                    {!! captcha_img('flat') !!}
-                                </div>
-                            </div>
-                            <div class="captcha__right">
-                                <input type="text" name="captcha" id="captcha" placeholder="@lang('feedback::index.captcha_placeholder')">
-                                @if ($errors->has('captcha'))
-                                    <div class="feedback__error">
-                                        {{ $errors->first('captcha') }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feedback__item">
-                        <div class="feedback__button">
-                            <input class="btn btn-block btn-default" type="submit" value="@lang('feedback::index.send')">
-                        </div>
-                    </div>
-                    {!! Form::close() !!}
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection--}}

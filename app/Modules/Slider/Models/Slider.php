@@ -54,6 +54,10 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Query\Builder|\App\Modules\Slider\Models\Slider whereTitleColor($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Modules\Slider\Models\Slider whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $link
+ * @property string $link_type
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Slider\Models\Slider whereLink($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Slider\Models\Slider whereLinkType($value)
  */
 class Slider extends Model
 {

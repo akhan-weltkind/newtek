@@ -58,6 +58,10 @@ use Kyslik\ColumnSortable\Sortable;
  * @method static \Illuminate\Database\Query\Builder|\Baum\Node withoutRoot()
  * @method static \Illuminate\Database\Query\Builder|\Baum\Node withoutSelf()
  * @mixin \Eloquent
+ * @property bool $in_footer_menu
+ * @property bool $footer_column
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Tree\Models\Tree whereFooterColumn($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Tree\Models\Tree whereInFooterMenu($value)
  */
 class Tree extends ParentTree{
 

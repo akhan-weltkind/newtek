@@ -22,5 +22,14 @@ return[
     'captcha_placeholder'=>'Enter the digits on the image',
     'send'=>'Send',
 
+    'success' => 'Your message was successfully sent. Our managers will contact you shortly.',
+
+    'emails' => [
+        'title' => 'Сообщение с сайта newtek.kg',
+        'theme' => 'Тема:',
+        'fio'   =>'ФИО отправителя:',
+        'email' => 'Email:',
+        'message'   => 'Текст сообщения:'
+    ]
 
 ];

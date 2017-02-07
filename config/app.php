@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Студия Weltkind',
+    'name' => 'NewTek',
 
     /*
     |--------------------------------------------------------------------------
@@ -264,6 +264,7 @@ return [
         'Widget' => App\Modules\Widgets\Facades\Widget::class,
         'Settings' => App\Modules\Settings\Facades\Settings::class,
         'Tree' => App\Modules\Tree\Facades\Tree::class,
+        'Category' => App\Modules\Category\Facades\Category::class,
 
         'Date' =>  App\Facades\Date::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
