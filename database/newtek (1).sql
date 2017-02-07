@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 07 2017 г., 10:36
+-- Время создания: Фев 07 2017 г., 15:11
 -- Версия сервера: 5.6.31
 -- Версия PHP: 7.0.8
 
@@ -19,31 +19,6 @@ SET time_zone = "+00:00";
 --
 -- База данных: `newtek`
 --
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `lr_articles`
---
-
-DROP TABLE IF EXISTS `lr_articles`;
-CREATE TABLE IF NOT EXISTS `lr_articles` (
-  `id` int(10) unsigned NOT NULL,
-  `lang` enum('ru','en','ky') COLLATE utf8_unicode_ci NOT NULL,
-  `priority` int(11) NOT NULL,
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date` date NOT NULL,
-  `preview` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `content` text COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `active` tinyint(4) NOT NULL,
-  `meta_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `meta_h1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `meta_keywords` text COLLATE utf8_unicode_ci NOT NULL,
-  `meta_description` text COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -82,14 +57,14 @@ CREATE TABLE IF NOT EXISTS `lr_catalog` (
   `meta_description` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп данных таблицы `lr_catalog`
 --
 
 INSERT INTO `lr_catalog` (`id`, `lang`, `category_id`, `date`, `code`, `title`, `preview`, `content`, `image`, `size`, `power`, `electrical`, `electrical_active`, `technical`, `technical_active`, `document1`, `name1`, `document2`, `name2`, `document3`, `name3`, `document4`, `name4`, `meta_title`, `meta_h1`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'ru', 3, '2017-02-02 18:00:00', 'Grade-A Polycrystal 156x156mm 60pcs (6x10)', 'NEOSUN NS-265M/270M', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.</p>\r\n', '1486374447_77252800.png', '250/255/260W', '1640x992x35mm', '<table class="electrical">\r\n	<thead>\r\n		<tr>\r\n			<td class="head" colspan="2">Технические характеристики</td>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>Тип ячейки:</td>\r\n			<td>поликристалл 155х156 мм 60 шт. (6x10)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Класс ячейки:</td>\r\n			<td>GRADE A</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Размеры модуля AxBxC:</td>\r\n			<td>1 665 x 1 001 x 42 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Вес:</td>\r\n			<td>18,5 кг &plusmn; 1</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Фронтальная часть (толщина):</td>\r\n			<td>Закаленное стекло, 3,2 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кол-во диодов:</td>\r\n			<td>3 шт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кабель (диаметр, длина):</td>\r\n			<td>Ф=4 мм2, L=1000/ 1200 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип коннектора:</td>\r\n			<td>комплектуется MC4</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Распред. коробка (ур. защиты)</td>\r\n			<td>IP 65</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Рама (материал):</td>\r\n			<td>Анодированный алюминий</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Максимальная нагрузка:</td>\r\n			<td>5 400 Па</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Температура эксплуатации:</td>\r\n			<td>от - 40 до +85 &deg;C</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Номинальная рабочая t&deg;C:</td>\r\n			<td>46 &plusmn; 2&deg;C</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 1, '<table class="technical">\r\n	<thead>\r\n		<tr>\r\n			<td colspan="2">Электрические характеристики</td>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>Тип ячейки:</td>\r\n			<td>поликристалл 156х156 мм 60 шт. (6x10)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Класс ячейки:</td>\r\n			<td>GRADE A</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Размеры модуля AxBxC:</td>\r\n			<td>1 665 x 1 001 x 42 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Вес:</td>\r\n			<td>18,5 кг &plusmn; 1</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Фронтальная часть (толщина):</td>\r\n			<td>Закаленное стекло, 3,2 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кол-во диодов:</td>\r\n			<td>3 шт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кабель (диаметр, длина):</td>\r\n			<td>Ф=4 мм2, L=1000/ 1200 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип коннектора:</td>\r\n			<td>комплектуется MC4</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Распред. коробка (ур. защиты)</td>\r\n			<td>IP 65</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Рама (материал):</td>\r\n			<td>Анодированный алюминий</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Максимальная нагрузка:</td>\r\n			<td>5 400 Па</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Температура эксплуатации:</td>\r\n			<td>от - 40 до +85 &deg;C</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Номинальная рабочая t&deg;C:</td>\r\n			<td>46 &plusmn; 2&deg;C</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 1, '1486379370_44896300.docx', 'name1', '', 'name2', '', 'name3', '', 'name4', '', '', '', '', '2017-02-02 22:42:13', '2017-02-06 05:21:22'),
+(1, 'ru', 3, '2017-02-02 18:00:00', 'Grade-A Polycrystal 156x156mm 60pcs (6x10)', 'NEOSUN NS-265M/270M', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.</p>\r\n', '1486374447_77252800.png', '250/255/260W', '1640x992x35mm', '<table class="electrical">\r\n	<thead>\r\n		<tr>\r\n			<td class="head" colspan="2">Технические характеристики</td>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>Тип ячейки:</td>\r\n			<td>поликристалл 155х156 мм 60 шт. (6x10)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Класс ячейки:</td>\r\n			<td>GRADE A</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Размеры модуля AxBxC:</td>\r\n			<td>1 665 x 1 001 x 42 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Вес:</td>\r\n			<td>18,5 кг &plusmn; 1</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Фронтальная часть (толщина):</td>\r\n			<td>Закаленное стекло, 3,2 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кол-во диодов:</td>\r\n			<td>3 шт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кабель (диаметр, длина):</td>\r\n			<td>Ф=4 мм2, L=1000/ 1200 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип коннектора:</td>\r\n			<td>комплектуется MC4</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Распред. коробка (ур. защиты)</td>\r\n			<td>IP 65</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Рама (материал):</td>\r\n			<td>Анодированный алюминий</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Максимальная нагрузка:</td>\r\n			<td>5 400 Па</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Температура эксплуатации:</td>\r\n			<td>от - 40 до +85 &deg;C</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Номинальная рабочая t&deg;C:</td>\r\n			<td>46 &plusmn; 2&deg;C</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 1, '<table class="technical">\r\n	<thead>\r\n		<tr>\r\n			<td colspan="2">Электрические характеристики</td>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>Тип ячейки:</td>\r\n			<td>поликристалл 156х156 мм 60 шт. (6x10)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Класс ячейки:</td>\r\n			<td>GRADE A</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Размеры модуля AxBxC:</td>\r\n			<td>1 665 x 1 001 x 42 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Вес:</td>\r\n			<td>18,5 кг &plusmn; 1</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Фронтальная часть (толщина):</td>\r\n			<td>Закаленное стекло, 3,2 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кол-во диодов:</td>\r\n			<td>3 шт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кабель (диаметр, длина):</td>\r\n			<td>Ф=4 мм2, L=1000/ 1200 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип коннектора:</td>\r\n			<td>комплектуется MC4</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Распред. коробка (ур. защиты)</td>\r\n			<td>IP 65</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Рама (материал):</td>\r\n			<td>Анодированный алюминий</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Максимальная нагрузка:</td>\r\n			<td>5 400 Па</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Температура эксплуатации:</td>\r\n			<td>от - 40 до +85 &deg;C</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Номинальная рабочая t&deg;C:</td>\r\n			<td>46 &plusmn; 2&deg;C</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 1, '1.docx', 'Скачать характеристики', '2.docx', 'Скачать характеристики2', '3.docx', 'Скачать характеристики3', '4.docx', 'Скачать характеристики4', '', '', '', '', '2017-02-02 22:42:13', '2017-02-07 05:55:13'),
 (2, 'en', 6, '2017-02-06 18:00:00', 'Grade-A Polycrystal 156x156mm 60pcs (6x10)', 'NEOSUN NS-265M/270M', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusamus, iste corporis unde, sapiente itaque quae quia, eos eligendi aliquam quidem laborum, saepe voluptatibus sed placeat obcaecati inventore. Harum, inventore.</p>\r\n', '1486443144_34329000.png', '250/255/260W', '1640x992x35mm', '<table>\r\n	<thead>\r\n		<tr>\r\n			<td colspan="2">Технические характеристики</td>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>Тип ячейки:</td>\r\n			<td>поликристалл 155х156 мм 60 шт. (6x10)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Класс ячейки:</td>\r\n			<td>GRADE A</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Размеры модуля AxBxC:</td>\r\n			<td>1 665 x 1 001 x 42 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Вес:</td>\r\n			<td>18,5 кг &plusmn; 1</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Фронтальная часть (толщина):</td>\r\n			<td>Закаленное стекло, 3,2 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кол-во диодов:</td>\r\n			<td>3 шт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кабель (диаметр, длина):</td>\r\n			<td>Ф=4 мм2, L=1000/ 1200 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип коннектора:</td>\r\n			<td>комплектуется MC4</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Распред. коробка (ур. защиты)</td>\r\n			<td>IP 65</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Рама (материал):</td>\r\n			<td>Анодированный алюминий</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Максимальная нагрузка:</td>\r\n			<td>5 400 Па</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Температура эксплуатации:</td>\r\n			<td>от - 40 до +85 &deg;C</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Номинальная рабочая t&deg;C:</td>\r\n			<td>46 &plusmn; 2&deg;C</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 1, '<table>\r\n	<thead>\r\n		<tr>\r\n			<td colspan="2">Электрические характеристики</td>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>Тип ячейки:</td>\r\n			<td>поликристалл 156х156 мм 60 шт. (6x10)</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Класс ячейки:</td>\r\n			<td>GRADE A</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Размеры модуля AxBxC:</td>\r\n			<td>1 665 x 1 001 x 42 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Вес:</td>\r\n			<td>18,5 кг &plusmn; 1</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Фронтальная часть (толщина):</td>\r\n			<td>Закаленное стекло, 3,2 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кол-во диодов:</td>\r\n			<td>3 шт</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Кабель (диаметр, длина):</td>\r\n			<td>Ф=4 мм2, L=1000/ 1200 мм</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Тип коннектора:</td>\r\n			<td>комплектуется MC4</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Распред. коробка (ур. защиты)</td>\r\n			<td>IP 65</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Рама (материал):</td>\r\n			<td>Анодированный алюминий</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Максимальная нагрузка:</td>\r\n			<td>5 400 Па</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Температура эксплуатации:</td>\r\n			<td>от - 40 до +85 &deg;C</td>\r\n		</tr>\r\n		<tr>\r\n			<td>Номинальная рабочая t&deg;C:</td>\r\n			<td>46 &plusmn; 2&deg;C</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', 1, '', '', '', '', '', '', '', '', '', '', '', '', '2017-02-06 22:52:24', '2017-02-06 22:52:24');
 
 -- --------------------------------------------------------
@@ -632,14 +607,6 @@ INSERT INTO `lr_widgets` (`id`, `lang`, `protected`, `active`, `type`, `slug`, `
 --
 
 --
--- Индексы таблицы `lr_articles`
---
-ALTER TABLE `lr_articles`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `articles_lang_index` (`lang`),
-  ADD KEY `articles_priority_index` (`priority`);
-
---
 -- Индексы таблицы `lr_catalog`
 --
 ALTER TABLE `lr_catalog`
@@ -760,15 +727,10 @@ ALTER TABLE `lr_widgets`
 --
 
 --
--- AUTO_INCREMENT для таблицы `lr_articles`
---
-ALTER TABLE `lr_articles`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT для таблицы `lr_catalog`
 --
 ALTER TABLE `lr_catalog`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `lr_catalog_document`
 --
