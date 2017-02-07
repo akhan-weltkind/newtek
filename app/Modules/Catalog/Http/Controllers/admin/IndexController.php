@@ -4,14 +4,15 @@ namespace App\Modules\Catalog\Http\Controllers\Admin;
 
 use App\Modules\Admin\Http\Controllers\Admin;
 use App\Modules\Admin\Http\Controllers\Image;
+use App\Modules\Admin\Http\Controllers\Files;
 use App\Modules\Catalog\Models\Catalog;
 use App\Facades\Route;
-use App\Modules\Catalog\Models\Document;
 
 class IndexController extends Admin
 {
 
     use Image;
+    use Files;
 
     public function getModel(){
         return new Catalog();
@@ -28,7 +29,7 @@ class IndexController extends Admin
     {
         if (Route::getAction() == 'store' || Route::getAction() == 'update') {
             $this->upload($entity);
-            /*$this->uploadFiles($entity);*/
+            $this->uploadFiles($entity);
         }
 
         if (Route::getAction() == 'edit') {

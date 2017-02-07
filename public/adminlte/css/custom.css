@@ -130,3 +130,35 @@ table.table td.controls{
 .mb-20 {
     margin-bottom: 20px;
 }
+
+.form-control-file {
+    display: inline-block;
+    border-bottom: 1px solid #d2d6de;
+    border-top: 1px solid #d2d6de;
+    border-left: 1px solid #d2d6de;
+    padding: 5px;
+
+}
+
+.form-control-file-desc{
+    display: inline-block;
+    padding: 5px 10px 5px 5px;
+    border: 1px solid #d2d6de;
+    -webkit-border-top-right-radius: 200px;
+    -webkit-border-bottom-right-radius: 200px;
+    -moz-border-radius-topright: 200px;
+    -moz-border-radius-bottomright: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    background: #3c8dbc;
+    color: #000000;
+}
+
+.form-control-file-desc:hover {
+    background: #0c0c0c;
+    color: #3c8dbc;
+}
+
+.block{
+    display: block;
+}

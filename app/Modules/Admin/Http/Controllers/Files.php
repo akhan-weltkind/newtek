@@ -7,15 +7,15 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 
 
-trait Image
+trait Files
 {
 
-    public function deleteUpload($id, $field = false)
+    public function deleteUploadfiles($id, $field = false)
     {
 
-       $entity = $this->getModel()->findOrFail($id);
+        $entity = $this->getModel()->findOrFail($id);
 
-        $config = $this->getConfig();
+        $config = $this->getConfigFiles();
 
         if (!array_key_exists($field, $config)) {
             return redirect()->back();
@@ -30,8 +30,6 @@ trait Image
                 $entity->save();
             }
         }
-
-
     }
 
     protected function after($entity)
@@ -42,14 +40,14 @@ trait Image
         }
 
         if (Route::getAction() == 'edit') {
-            view()->share('config', $this->getConfig());
+            view()->share('config', $this->getConfigFiles());
         }
 
     }
 
-    protected function upload($entity)
+    protected function uploadFiles($entity)
     {
-        $config = $this->getConfig();
+        $config = $this->getConfigFiles();
         foreach ($config as $field => $cnf) {
 
             if (Request::hasFile($field)) {
@@ -61,7 +59,7 @@ trait Image
 
                 $file = Request::file($field);
 
-                if (Uploader::upload($file, $cnf)) {
+                if (Uploader::upload($file, $cnf,false)) {
 
                     $entity->{$cnf['field']} = Uploader::getName();
                     $entity->save();
@@ -70,9 +68,9 @@ trait Image
         }
     }
 
-    protected function getConfig()
+    protected function getConfigFiles()
     {
-        return module_config('uploads');
+        return module_config('uploads-file');
 
     }
 

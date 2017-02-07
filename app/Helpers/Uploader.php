@@ -19,14 +19,19 @@ class Uploader{
         return $this->name;
     }
 
-
-
-    public function upload($file, $config){
+    public function upload($file, $config,$generate = true){
         $baseDir = public_path() . $config['path'];
 
         $this->dir($baseDir);
 
-        $this->generateName($file->getClientOriginalExtension());
+        if ($generate) {
+            $this->generateName($file->getClientOriginalExtension());
+        }
+        else {
+            $this->name = $file->getClientOriginalName();
+        }
+
+
 
         if (!isset($config['thumbs']) || empty($config['thumbs'])) {
             $file->move($baseDir,  $this->getName());
@@ -160,6 +165,10 @@ class Uploader{
         }
 
         return $url;
+    }
+
+    public function fileUrl($config){
+        return $config['path'];
     }
 
     public function url($config, $folder){

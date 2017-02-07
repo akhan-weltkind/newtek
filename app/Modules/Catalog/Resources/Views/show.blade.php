@@ -46,8 +46,21 @@
                         {!! $entity->electrical !!}
                     @endif
                 </div>
-                <button class="download-btn">Скачать характеристики</button>
-                <button class="download-btn download-btn">Скачать прайс-лист</button>
+                @if($entity->document1)
+                    <a href="{{ asset('uploads/catalog/files/' . $entity->document1) }}" class="download-btn">{{ $entity->name1?$entity->name1:'Файл 1' }}</a>
+                @endif
+                @if($entity->document2)
+                    <button class="download-btn">{{ $entity->name2?$entity->name2:'Файл 2' }}</button>
+                @endif
+                <br />
+                <br />
+                @if($entity->document3)
+                    <button class="download-btn">{{ $entity->name3?$entity->name3:'Файл 3' }}</button>
+                @endif
+                @if($entity->document4)
+                    <button class="download-btn">{{ $entity->name4?$entity->name4:'Файл 4' }}</button>
+                @endif
+
             </div>
             <div class="clear"></div>
         </div>
