@@ -38,4 +38,9 @@ class Search extends BaseSearch
 
         return route($this->routeName, ['id' => $row->id, 'category' => $row->category_id]);
     }
+
+    public function getModuleHtml($nodes)
+    {
+        return view('catalog::search',['list' => $nodes]);
+    }
 }

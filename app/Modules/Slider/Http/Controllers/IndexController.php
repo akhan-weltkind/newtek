@@ -13,8 +13,4 @@ class IndexController extends Controller
         return new Slider();
     }
 
-    /*public function index(){
-        return view($this->getIndexViewName(), ['entities'=>$this->getModel()->published()->paginate($this->perPage), 'routePrefix'=>$this->routePrefix]);
-    }*/
-
 }

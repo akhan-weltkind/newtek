@@ -2199,7 +2199,7 @@ color: #fff;
 border: none;
 display: inline-block;
 background: #2d2e83;
-text-align: center;
+text-decoration: none;
 width: 265px;
 height: 45px;
 cursor: pointer;
@@ -2384,6 +2384,24 @@ text-align: center;
 
 .center-block {
     text-align: center;
+}
+
+.catalog__search-item {
+    overflow: hidden;
+    border: 1px solid transparent;
+    padding: 26px 21px 13px 21px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.catalog-search-mask {
+    text-align:center;
+    text-decoration:none;
+}
+
+.b-search-results-list__item {
+    list-style: none;
 }
 
 

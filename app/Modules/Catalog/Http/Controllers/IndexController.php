@@ -41,7 +41,7 @@ class IndexController extends Controller
         Breadcrumbs::add(trans('catalog::front.title'),URL::route('catalog'));
 
         if (Cat::whereId($product->category_id)->first()->depth == 1) {
-            Breadcrumbs::add(Cat::whereId($product->category_id)->pluck('title')->first(),URL::route('catalog.list',$id));
+            Breadcrumbs::add(Cat::whereId($product->category_id)->pluck('title')->first(),URL::route('catalog.list',$product->category_id));
         }
 
         Breadcrumbs::add($product->title,'');

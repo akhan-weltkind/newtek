@@ -10,9 +10,9 @@
                     @foreach($moduleInfo['nodes'] as $num => $node)
                     <li class="b-search-results-list__item">
                         <div class="b-search-results-list-item">
-                            <h4 class="b-search-results-list-item__title">
+                            <h5 class="b-search-results-list-item__title">
                                 <a href="{{ $node['url'] }}">{!! $node['title']  !!}</a>
-                            </h4>
+                            </h5>
                             <p class="b-search-results-list-item__preview">{!! $node['preview']  !!}</p>
                         </div>
                     </li>
