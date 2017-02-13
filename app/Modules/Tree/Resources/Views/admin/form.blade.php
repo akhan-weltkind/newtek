@@ -1,3 +1,29 @@
+@push('js')
+    <script>
+        $(document).ready(function () {
+            $('#parent_id').change(function () {
+                var id  = $(this).val(),
+                    url = '{{ home() . '/' . config('cms.uri') }}/tree/depth/' + id;
+                console.log(url);
+                $.ajax({
+                    type: 'GET',
+                    url: url,
+                    success: function(responce){
+                        if( parseInt(responce) >= 2){
+                            $('#footer_column').parent().parent().hide();
+                        } else {
+                            $('#footer_column').parent().parent().show();
+                        }
+                    },
+                    error: function (responce) {
+                        console.log('f + ' + responce);
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
+
 @extends('admin::admin.form')
 
 @section('topmenu')
@@ -21,6 +47,7 @@
 <div class="col-md-6">
     @if (Request::get('parent') || $entity->parent_id)
     {!! BootForm::text('slug', trans('tree::admin.slug')) !!}
+        <p class="help-block">Используйте только латинские буквы, цифры и символы _ и -</p>
     @endif
 </div>
 
@@ -51,13 +78,26 @@
 
 <div class="clearfix"></div>
 
-<div class="col-md-6">
-    {!! BootForm::select('footer_column',  'Номер колонки в футере', [
-        1 => 'Первая колонка',
-        2 => 'Вторая колонка',
-        3 => 'Третья колонка'
-    ]) !!}
-</div>
+
+@if($entity->id)
+    <div class="col-md-6">
+        @if($entity->depth < 2)
+            {!! BootForm::select('footer_column',  'Номер колонки в футере', [
+                1 => 'Первая колонка',
+                2 => 'Вторая колонка',
+                3 => 'Третья колонка'
+            ]) !!}
+        @endif
+    </div>
+@else
+    <div class="col-md-6">
+        {!! BootForm::select('footer_column','Номер колонки в футере',[
+                1 => 'Первая колонка',
+                2 => 'Вторая колонка',
+                3 => 'Третья колонка'
+        ])!!}
+    </div>
+@endif
 
 <div class="col-md-6">
     {!! BootForm::hidden('in_footer_menu', 0) !!}

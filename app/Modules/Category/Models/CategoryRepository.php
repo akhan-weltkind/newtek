@@ -1,12 +1,13 @@
 <?php
 namespace App\Modules\Category\Models;
 
-use App\Modules\Category\Models\Category as Model;
+use App\Modules\Catalog\Models\Catalog;
+use App\Modules\Category\Models\Category;
 
 class CategoryRepository
 {
 
-    public function getRoutes()
+ /*   public function getRoutes()
     {
         $routes = Model::active()->get();
 
@@ -43,33 +44,41 @@ class CategoryRepository
     public function getRoot()
     {
         return Model::where('parent_id', null)->first();
-    }
+    }*/
 
-    public function getSelect()
+    public function getSelect($all = 'false')
     {
-
         $keyed = collect();
 
-        Model::admin()->get()->mapWithKeys(function ($item) use ($keyed) {
-            if($item->depth != 0){
-                $keyed[$item->id] = str_repeat('-', $item->depth) . $item->title;
-            }
-        });
+        if ($all) {
+            $keyed[0] = $all;
+        }
+
+        $categories = Category::all();
+        foreach ($categories as $category){
+            $keyed[$category->id] = $category->title;
+        }
+
 
         return $keyed;
     }
 
-    public function getFirstLevel(){
-
-        $result = Model::where('depth',1)->active()->get();
-
-        return $result;
+    public function getMenus(){
+        return Category::all();
     }
 
+    public function all(){
+        return Category::all();
+    }
     public function getName($id){
-        $result = Model::pluck('name')->where('id',$id)->first();
+        $category = Category::where('id',$id)->first();
+        return $category->title;
+    }
 
-        return $result;
+    public function getById($id){
+
+
+        return Category::whereId($id)->first();
     }
 
 }

@@ -19,6 +19,7 @@
             <thead>
             <tr>
                 <th>@lang('tree::admin.title_short')</th>
+                <th>Модуль</th>
                 <th>@lang('tree::admin.slug_short')</th>
                 <th>@lang('admin::fields.priority')</th>
                 <th>@lang('admin::admin.control')</th>
@@ -31,6 +32,7 @@
                     <td> {!! str_repeat('<span class="fa padding"></span> ', $entity->depth) !!} <span
                                 class="fa @if ($entity->isRoot())fa-cog @elseif(!$entity->isLeaf()) fa-folder @else fa-sticky-note-o @endif"></span> {{ $entity->title }}
                     </td>
+                    <td><strong>{{ $entity->module }}</strong></td>
                     <td>{{ $entity->slug }}</td>
                     <td class="priority">
                         @if (!$entity->isRoot())

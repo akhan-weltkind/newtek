@@ -6,10 +6,12 @@ use App\Modules\Admin\Http\Controllers\Admin;
 use App\Modules\Category\Models\Category;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Validation\Rule;
+use App\Modules\Admin\Http\Controllers\Priority;
 
 class IndexController extends Admin
 {
 
+    use Priority;
     public $perPage = 100;
 
 
@@ -52,28 +54,6 @@ class IndexController extends Admin
 
 
         }
-    }
-
-    public function priority($id, $direction)
-    {
-
-        $entity = $this->getModel()->findOrFail($id);
-
-        try {
-            if ($direction == 'up') {
-                $entity->moveLeft();
-            } else {
-                $entity->moveRight();
-            }
-
-        } catch (\Baum\MoveNotPossibleException $e) {
-            redirect()->back();
-        }
-
-
-        $this->after($entity);
-
-        return redirect()->back();
     }
 
 

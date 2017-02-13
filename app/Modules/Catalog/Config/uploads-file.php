@@ -4,7 +4,7 @@ return [
     'document1' =>[
         'path' => '/uploads/catalog/files',
 
-        'validator' => 'mimes:doc,docx,pdf,xlsx,xls|max:15360',
+        'validator' => 'mimes:doc,docx,pdf,xlsx,xls|max:25360',
 
         //Model field
         'field' => 'document1',

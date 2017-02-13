@@ -1,4 +1,4 @@
-@extends('layouts.inner')
+@extends('layouts.full')
 
 @push('js')
 @verbatim

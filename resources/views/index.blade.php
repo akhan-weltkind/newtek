@@ -11,6 +11,6 @@
     @include('parts.advantage')
     <div class="wrapper">
         @include('news::main')
-        @include('parts.details')
+        @include('common.details')
     </div>
 @endsection

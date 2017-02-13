@@ -29,7 +29,8 @@
     </div>
 
     <div class="col-md-6">
-        @include('admin::common.forms.image', ['entity'=>$entity, 'routePrefix'=>$routePrefix, 'field'=>'image'])
+        @include('admin::common.forms.image', ['entity'=>$entity, 'routePrefix'=>$routePrefix, 'field'=>'image','helpBlock'     => 'Рекомендуемые размеры 400х400'])
+
     </div>
 
 

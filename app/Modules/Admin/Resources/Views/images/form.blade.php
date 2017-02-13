@@ -1,6 +1,6 @@
 @push('js')
 @if ($id)
-    <script src="/adminlte/plugins/jQueryUi/jquery-ui.min.js"></script>
+    <script src="/adminlte/plugins/jQueryUI/jquery-ui.min.js"></script>
 
     <script>
 
@@ -106,7 +106,9 @@
 
     <div class="clearfix"></div>
     <p class="help-block">Для сортировки изображений, перетаскивайте их с помощью мыши</p>
-
+    @if(isset($helpBlock))
+        <p class="help-block">{{ $helpBlock }}</p>
+    @endif
 @else
     <p class="help-block">Сохраните запись, чтобы добавить изображения</p>
 @endif

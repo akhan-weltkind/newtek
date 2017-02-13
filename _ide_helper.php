@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.29 on 2017-02-06.
+ * Generated for Laravel 5.3.29 on 2017-02-13.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14057,8 +14057,8 @@ namespace {
          *
          * @static 
          */
-        public static function upload($file, $config){
-            return \App\Helpers\Uploader::upload($file, $config);
+        public static function upload($file, $config, $generate = true, $crop = false){
+            return \App\Helpers\Uploader::upload($file, $config, $generate, $crop);
         }
         
         /**
@@ -14104,6 +14104,15 @@ namespace {
          */
         public static function thumbUrl($config){
             return \App\Helpers\Uploader::thumbUrl($config);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function fileUrl($config){
+            return \App\Helpers\Uploader::fileUrl($config);
         }
         
         /**
@@ -14184,6 +14193,15 @@ namespace {
             return \App\Modules\Tree\Models\TreeRepository::getSelect();
         }
         
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getDepth($id){
+            return \App\Modules\Tree\Models\TreeRepository::getDepth($id);
+        }
+        
     }
 
 
@@ -14194,8 +14212,8 @@ namespace {
          *
          * @static 
          */
-        public static function getRoutes(){
-            return \App\Modules\Category\Models\CategoryRepository::getRoutes();
+        public static function getSelect($all = 'false'){
+            return \App\Modules\Category\Models\CategoryRepository::getSelect($all);
         }
         
         /**
@@ -14212,35 +14230,8 @@ namespace {
          *
          * @static 
          */
-        public static function get($id){
-            return \App\Modules\Category\Models\CategoryRepository::get($id);
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function getRoot(){
-            return \App\Modules\Category\Models\CategoryRepository::getRoot();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function getSelect(){
-            return \App\Modules\Category\Models\CategoryRepository::getSelect();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
-        public static function getFirstLevel(){
-            return \App\Modules\Category\Models\CategoryRepository::getFirstLevel();
+        public static function all(){
+            return \App\Modules\Category\Models\CategoryRepository::all();
         }
         
         /**
@@ -14250,6 +14241,15 @@ namespace {
          */
         public static function getName($id){
             return \App\Modules\Category\Models\CategoryRepository::getName($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getById($id){
+            return \App\Modules\Category\Models\CategoryRepository::getById($id);
         }
         
     }

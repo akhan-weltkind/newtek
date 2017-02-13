@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Request;
 
 class IndexController extends Controller{
 
-    public $perPage = 6;
+    public $perPage = 10;
 
     public function getModel(){
         return new Project();

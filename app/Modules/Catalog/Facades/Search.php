@@ -26,6 +26,13 @@ class Search extends BaseSearch
             ->where('lang', \Lang::locale())
             ->get();
 
+
+        foreach ($sql as $item){
+            $item->title = $this->getTitle($item);
+            $item->content = $this->getContent($item);
+            $item->preview = $this->getPreview($item);
+        }
+
         return $this->addNodes($sql, 'catalog', trans('catalog::index.title'));
     }
 
@@ -42,5 +49,42 @@ class Search extends BaseSearch
     public function getModuleHtml($nodes)
     {
         return view('catalog::search',['list' => $nodes]);
+    }
+
+    /**
+    * @param $result array|Collection Search results
+    * @param $module string Module name
+    * @param $title string Module title in view
+    * @param bool $catalog Is catalog
+    * @return array
+    */
+    public function addNodes($result, $module, $title, $catalog = false)
+    {
+        $resultArray = array();
+
+        if ((is_object($result) && $result->count() >= 1) || (is_array($result) && count($result) >= 1)) {
+            $resultArray[$module]['title'] = $title;
+            $nodes = array();
+            $resultArray[$module]['html'] = $this->getModuleHtml($result);
+
+            foreach ($result as $num => $row) {
+                $nodes[] = array(
+                    'title' => $this->getTitle($row),
+                    'url' => $this->getUrl($row),
+                    'preview' => $this->getPreview($row),
+                    'content' => $this->getContent($row),
+                    'image'     => $row->image
+                );
+                self::$total++;
+
+            }
+
+            $resultArray[$module]['nodes'] = $nodes;
+
+        }
+
+        $resultArray = $this->postAdd($resultArray);
+
+        return $resultArray;
     }
 }

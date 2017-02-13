@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 trait Files
 {
 
-    public function deleteUploadfiles($id, $field = false)
+    public function deleteUploadFiles($id, $field = false)
     {
 
         $entity = $this->getModel()->findOrFail($id);
@@ -23,12 +23,12 @@ trait Files
 
         $config = $config[$field];
 
-
         if (isset($entity->{$config['field']})) {
-            if (Uploader::delete($entity->{$config['field']}, $config)) {
+            if (Uploader::delete('/'.$entity->{$config['field']}, $config)) {
                 $entity->{$config['field']} = '';
                 $entity->save();
             }
+
         }
     }
 
@@ -59,8 +59,7 @@ trait Files
 
                 $file = Request::file($field);
 
-                if (Uploader::upload($file, $cnf,false)) {
-
+                if (Uploader::upload($file, $cnf,false, -30)) {
                     $entity->{$cnf['field']} = Uploader::getName();
                     $entity->save();
                 }

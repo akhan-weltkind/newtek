@@ -81,7 +81,7 @@ class Slider extends Model
     ];
 
     public function scopeOrder($query){
-        return $query->orderBy('priority', 'asc')->orderBy('created_at', 'desc');
+        return $query->orderBy('priority', 'desc')->orderBy('created_at', 'desc');
     }
 
 }

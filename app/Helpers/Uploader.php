@@ -19,7 +19,7 @@ class Uploader{
         return $this->name;
     }
 
-    public function upload($file, $config,$generate = true){
+    public function upload($file, $config,$generate = true,$crop = false){
         $baseDir = public_path() . $config['path'];
 
         $this->dir($baseDir);
@@ -28,7 +28,13 @@ class Uploader{
             $this->generateName($file->getClientOriginalExtension());
         }
         else {
-            $this->name = $file->getClientOriginalName();
+            if ( strlen($file->getClientOriginalName()) > -$crop ) {
+                $this->name = substr($file->getClientOriginalName(),$crop);
+            }
+            else {
+                $this->name = $file->getClientOriginalName();
+            }
+
         }
 
 
@@ -42,8 +48,6 @@ class Uploader{
         }
 
     }
-
-
 
     public function resizeAndUpload($file, $config){
         $baseDir = public_path() . $config['path'];
@@ -121,6 +125,8 @@ class Uploader{
         else{
             foreach ($config['thumbs'] as $thumb) {
                 $path = $baseDir.$thumb['path'].$name;
+                dump('2');
+                dump($path);
                 @unlink($path);
             }
         }

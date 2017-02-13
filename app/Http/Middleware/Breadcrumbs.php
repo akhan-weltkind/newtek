@@ -39,6 +39,7 @@ class Breadcrumbs
         $entity = $request->get('entity');
 
         if ($entity && $renderEntity===true) {
+
             Facade::add($entity->title, route($page->slug . '.show', ['id' => $entity->id]));
         }
 

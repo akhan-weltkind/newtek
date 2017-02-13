@@ -1,7 +1,6 @@
     {!! Form::open(['id' => 'f_contact','action' => '\App\Modules\Feedback\Http\Controllers\IndexController@modal'])  !!}
-    @include('feedback::main-errors')
-   {{-- <form id="f_contact" name="contact" action="#" method="post">--}}
         <h6>@lang('feedback::index.form_title')</h6>
+        @include('feedback::main-errors')
         <div class="b-form">
             {{ csrf_field() }}
 

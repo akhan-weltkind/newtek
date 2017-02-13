@@ -65,6 +65,22 @@ use App\Models\Filters;
  * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereTitle($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $document1
+ * @property string $name1
+ * @property string $document2
+ * @property string $name2
+ * @property string $document3
+ * @property string $name3
+ * @property string $document4
+ * @property string $name4
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereDocument1($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereDocument2($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereDocument3($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereDocument4($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereName1($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereName2($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereName3($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Modules\Catalog\Models\Catalog whereName4($value)
  */
 class Catalog extends Model
 {
@@ -73,16 +89,12 @@ class Catalog extends Model
     protected $table = 'catalog';
 
     public $filters = [
-        'title'=> ['title', 'LIKE', '%?%']
+        'category_id'=> ['category_id','=' ,'?']
     ];
 
     public function scopeOrder($query){
 
         return $query->orderBy('date', 'desc');
-    }
-
-    public function documents(){
-        return $this->hasMany('App\Modules\Catalog\Models\Document', 'catalog_id', 'id');
     }
 
     public function category(){

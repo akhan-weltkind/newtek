@@ -1,7 +1,7 @@
 @if (count($errors) > 0)
     <!-- Список ошибок формы -->
-    <div class="error center-block">
-        <strong>@lang('index.form_error')</strong>
+    <div class="error">
+        @lang('index.form_error')
     </div>
 @endif
 

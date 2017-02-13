@@ -132,18 +132,16 @@ table.table td.controls{
 }
 
 .form-control-file {
-    display: inline-block;
-    border-bottom: 1px solid #d2d6de;
-    border-top: 1px solid #d2d6de;
-    border-left: 1px solid #d2d6de;
+    display: inline;
+    border-bottom: 1px solid #3c8dbc;
+    border-top: 1px solid #3c8dbc;
+    border-left: 1px solid #3c8dbc;
     padding: 5px;
 
 }
 
 .form-control-file-desc{
-    display: inline-block;
-    padding: 5px 10px 5px 5px;
-    border: 1px solid #d2d6de;
+    padding: 6px 10px 6px 5px;
     -webkit-border-top-right-radius: 200px;
     -webkit-border-bottom-right-radius: 200px;
     -moz-border-radius-topright: 200px;
@@ -151,7 +149,8 @@ table.table td.controls{
     border-top-right-radius: 200px;
     border-bottom-right-radius: 200px;
     background: #3c8dbc;
-    color: #000000;
+    color: #FFFFFF;
+
 }
 
 .form-control-file-desc:hover {
@@ -159,6 +158,18 @@ table.table td.controls{
     color: #3c8dbc;
 }
 
+.form-control-file-delete {
+    margin-left: -3px;
+    padding: 6px 10px 6px 5px;
+    background: #ff2222;
+    color: #FFFFFF;
+
+}
+
+.form-control-file-delete:hover {
+    background: #0c0c0c;
+    color: #ff2222;
+}
 .block{
     display: block;
 }

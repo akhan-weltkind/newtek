@@ -10,6 +10,8 @@ use Caffeinated\Modules\Facades\Module;
 use App\Modules\Search\Models\StatisticsSearchWord;
 use Illuminate\Support\Facades\Validator;
 use App\Modules\Search\Http\Controllers\Search as SearchAbstract;
+use App\Modules\Tree\Helpers\Breadcrumbs;
+use URL;
 
 class IndexController extends Controller
 {
@@ -23,6 +25,9 @@ class IndexController extends Controller
         $validator = Validator::make($request->toArray(), [
             'query' => 'bail|required|min:3|max:55'
         ]);
+
+        Breadcrumbs::add('Главная',home());
+        Breadcrumbs::add(trans('search::index.title'),URL::route('catalog'));
 
         if ($validator->fails()) {;
             return view('search::message')->withErrors($validator);

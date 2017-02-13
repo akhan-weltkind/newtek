@@ -1,4 +1,18 @@
 @if($slider)
+    @push('js')
+    <script>
+        $('.slider').slick({
+            slidesToScroll:1,
+            slidesToShow:1,
+            speed: '{{ Settings::get('slider_interval') }}',
+            pauseOnHover:true,
+            arrows:true,
+            autoplay:true,
+            dots:true,
+            fade:true,
+        });
+    </script>
+    @endpush
     <div class="slider">
         @foreach($slider as $slide)
 
@@ -20,23 +34,19 @@
                         </p>
                     @endif
 
-                    @if(isset($slide->button))
+                    @if(isset($slide->link))
                         <a
                             class="slide__info_link"
                             href="@if(isset($slide->link)) {{ $slide->link }} @endif"
-                            style="@if(isset($slide->button_color))color:{{ $slide->button_color }};@endif
-                                @if(isset($slide->button_background))background::{{ $slide->button_background }};@endif"
-
                             @if(isset($slide->link_type))
                                 @if($slide->link_type == 'in')
                                     target="_self"
                                 @else
                                     target="_blank"
                                 @endif
-
                             @endif
                         >
-                            {{ $slide->button }}
+                            @lang('slider::slider.read_more')
                         </a>
                     @endif
                 </div>

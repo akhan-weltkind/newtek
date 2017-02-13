@@ -22,6 +22,7 @@ class IndexController extends Admin
     {
         return  [
             'title' => 'sometimes|required|max:255',
+            'category_id' => 'sometimes|required|integer',
         ];
     }
 

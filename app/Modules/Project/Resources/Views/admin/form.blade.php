@@ -23,7 +23,12 @@
     <div class="col-md-5 col-md-offset-1">
         {!! BootForm::hidden('active', 0) !!}
         {!! BootForm::checkbox('active', trans('project::admin.fields.active'), 1) !!}
-        @include('admin::common.forms.image', ['entity'=>$entity, 'routePrefix'=>$routePrefix, 'field'=>'main_image'])
+        @include('admin::common.forms.image', [
+            'entity'=>$entity,
+            'routePrefix'=>$routePrefix,
+            'field'=>'main_image',
+            'helpBlock'     => 'Рекомендуемые размеры 368х200'
+        ])
     </div>
 
     <div class="col-md-12">
@@ -32,7 +37,11 @@
     </div>
 
     <div class="col-md-12">
-        @include('admin::images.form', ['id'=>$entity->id, 'routePrefix'=>$routePrefix.'images.'])
+        @include('admin::images.form', [
+            'id'=>$entity->id,
+            'routePrefix'=>$routePrefix.'images.',
+            'helpBlock'     => 'Рекомендуемые размеры 880х400'
+        ])
     </div>
 
 

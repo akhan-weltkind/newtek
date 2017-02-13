@@ -75,5 +75,8 @@ class IndexController extends Admin
         return redirect()->back();
     }
 
-
+    public function getDepth($id){
+        echo Tree::whereId($id)->pluck('depth')->first();
+        die;
+    }
 }

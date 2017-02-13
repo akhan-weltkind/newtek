@@ -19,55 +19,55 @@ class CatalogAdminComposer
 		     					<tbody>
 		     						<tr>
 		     							<td>Тип ячейки:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Класс ячейки:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Размеры модуля AxBxC:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Вес:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Фронтальная часть (толщина):</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Кол-во диодов:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Кабель (диаметр, длина):</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Тип коннектора:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Распред. коробка (ур. защиты)</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Рама (материал):</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Максимальная нагрузка:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Температура эксплуатации:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Номинальная рабочая t°C:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;""></td>
 		     						</tr>
 		     					</tbody>
 		     				</table>
@@ -83,55 +83,55 @@ class CatalogAdminComposer
 		     					<tbody>
 		     						<tr>
 		     							<td>Тип ячейки:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Класс ячейки:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Размеры модуля AxBxC:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Вес:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Фронтальная часть (толщина):</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Кол-во диодов:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Кабель (диаметр, длина):</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Тип коннектора:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Распред. коробка (ур. защиты)</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Рама (материал):</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Максимальная нагрузка:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Температура эксплуатации:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     						<tr>
 		     							<td>Номинальная рабочая t°C:</td>
-		     							<td></td>
+		     							<td style="min-width: 100px;"></td>
 		     						</tr>
 		     					</tbody>
 		     				</table>

@@ -6,8 +6,20 @@
                     <ul class="footer__item__menu">
 
                         @foreach($footerItems->where('footer_column', $i) as $item)
-
-                            @if($item->children()->get()->isEmpty())
+                            @if($item->slug == "catalog")
+                                <li class="footer__item__menu_main">
+                                    <a href="{!! URL::route($item->slug) !!}">
+                                        {{$item->title}}
+                                    </a>
+                                </li>
+                                @foreach(Category::getMenus() as $value)
+                                    <li>
+                                        <a href="{!! URL::route('catalog.list',[ 'category' => $value->id ]) !!}">
+                                            {{$value->title}}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @elseif($item->children()->get()->isEmpty())
                                 <li class="footer__item__menu_main">
                                     <a href="{!! URL::route($item->slug) !!}">
                                         {{$item->title}}

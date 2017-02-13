@@ -21,11 +21,9 @@ class Meta
 
         $meta = [];
 
-
-
         $entity = Request::getFacadeRoot()->get('entity');
-        $page = Request::getFacadeRoot()->get('page');
 
+        $page = Request::getFacadeRoot()->get('page');
         $title = false;
 
         if ($entity) {
@@ -154,8 +152,6 @@ class Meta
         return $next($request);
 
     }
-
-
 
     protected function cleanContent($content, $length){
 

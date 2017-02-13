@@ -7,6 +7,7 @@
         <div class="box-body">
             <div class="col-md-3">
                 {!! BootForm::text('settings[slider_interval]', trans('slider::admin.fields.interval'),  Settings::get('slider_interval')) !!}
+                <p class="help-block">Число в миллисекундах. 1 секунда = 1000 миллисекунд</p>
             </div>
             <div class="col-md-2">
                 {!! BootForm::submit(trans('slider::admin.fields.save')) !!}

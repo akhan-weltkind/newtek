@@ -27,8 +27,14 @@
 <div class="images-list">
     @if(isset($imageTitle))
         {!! BootForm::label($imageTitle) !!}
+        @if(isset($helpBlock))
+            <p class="help-block">{{ $helpBlock }}</p>
+        @endif
     @else
         {!! BootForm::label(trans('admin::admin.image')) !!}
+        @if(isset($helpBlock))
+            <p class="help-block">{{ $helpBlock }}</p>
+        @endif
     @endif
 
     <div class="clearfix"></div>
@@ -46,6 +52,7 @@
             <i class="glyphicon glyphicon-trash"></i>
         </a>
     </div>
+
     @else
     {!! Form::file($field) !!}
     @endif

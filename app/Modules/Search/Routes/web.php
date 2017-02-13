@@ -10,9 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::localizedGroup(function () {
+    Route::group(['prefix' => 'search'], function () {
 
-Route::group(['prefix' => 'search'], function() {
+        Route::post('/', 'IndexController@search')->name('search')->middleware('page');
 
-    Route::post('/', 'IndexController@search')->name('search');
-
+    });
 });

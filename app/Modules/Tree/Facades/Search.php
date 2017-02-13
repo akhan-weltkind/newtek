@@ -17,10 +17,12 @@ class Search extends BaseSearch
         $sql = $this->getTable()
             ->select()
             ->where(
-                $this->getSearchSqlWhere(
-                    $this->getQuery(),
-                    array('title', 'content','meta_h1', 'meta_title', 'meta_keywords', 'meta_description')
-                ))
+                function ($query){
+                    $query->where($this->getSearchSqlWhere(
+                        $this->getQuery(),
+                        array('title', 'content','meta_h1', 'meta_title', 'meta_keywords', 'meta_description')
+                    ));
+                })
             ->where('active', 1)
             ->where('lang', \Lang::locale())
             ->get();

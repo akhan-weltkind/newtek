@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    @hasSection('meta-title')
+        @hasSection('meta-title')
         <title>@yield('meta-title')</title>
         @elseif(isset($meta->title) && $meta->title)
             <title>{{$meta->title}}</title>
@@ -26,6 +26,7 @@
             <meta property="og:description" content="{{$og->description}}" />
         @endif
 
+
         @if(isset($meta->keywords) && $meta->keywords)
             <meta name="keywords" content="{{$meta->keywords}}" />
         @endif
@@ -45,6 +46,7 @@
         <link href="/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
         <link href="/css/basictable.css" rel="stylesheet">
+        <link href="/css/social-likes_birman.css" rel="stylesheet">
         <link href="/css/jquery.fancybox.css" rel="stylesheet">
         <link href="/css/slick.css" rel="stylesheet">
         <link href="/css/style.css" rel="stylesheet">
@@ -64,6 +66,7 @@
 </head>
 
 <body>
+
 <!--[if lt IE 9]>
 <p class="browsehappy">@lang('index.old_browser')</p>
 <![endif]-->
@@ -73,8 +76,12 @@
             <div class="wrapper">
                 <header class="header">
                     <div class="logo">
-                        <a class="logo-back" href="{!! home() !!}">@lang('index.home')</a>
-                        <a class="logo-a" href="{!! home() !!}"></a>
+                        @if(isset($page->parent_id) && !empty($page->parent_id))
+                            <a class="logo-back" href="{!! home() !!}">@lang('index.home')</a>
+                            <a class="logo-a" href="{!! home() !!}"></a>
+                        @else
+                            <a class="logo-index" href="{!! home() !!}"></a>
+                        @endif
                     </div>
                     <div class="header__info">
                         <div class="header__info_top">
@@ -123,6 +130,8 @@
 
 @stack('js')
 
+<!--
+        This page took {{ (microtime(true) - LARAVEL_START) }} seconds to render -->
 </body>
 
 </html>

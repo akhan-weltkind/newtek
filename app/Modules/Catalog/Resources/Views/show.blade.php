@@ -3,13 +3,16 @@
 @section('page_content')
     <div class="wrapper">
         @include('tree::breadcrumbs')
-        <h1 class="main-title">@yield('h1', @$meta->h1)</h1>
+        <h1 class="main-title">{{ $meta->h1?$meta->h1:$pageTitle }}</h1>
         <div class="wrapper__left">
             <div class="catalog__item_full">
                 <div class="catalog__item">
                     @if($entity->image_thumb)
                         <div class="catalog__item__pic">
-                            <img src="{{ $entity->image_thumb }}" alt="{{ $entity->title }}">
+                            <a  class="product-colorbox" href="{{ $entity->image_thumb }}">
+                                <img src="{{ $entity->image_thumb }}" alt="{{ $entity->title }}">
+                            </a>
+
                         </div>
                     @endif
                     <div class="catalog__info">
@@ -34,7 +37,7 @@
                                 </tr>
                             @endif
                         </table>
-                        <p>{!! $entity->content !!}</p>
+                        <p>{!! $entity->preview !!}</p>
                     </div>
                 </div>
                 <div class="catalog-full__descr">
@@ -46,21 +49,28 @@
                         {!! $entity->electrical !!}
                     @endif
                 </div>
-                @if($entity->document1)
-                    <a href="{{ asset('uploads/catalog/files/' . $entity->document1) }}" class="download-btn">{{ $entity->name1?$entity->name1:'Файл 1' }}</a>
-                @endif
-                @if($entity->document2)
-                    <button class="download-btn">{{ $entity->name2?$entity->name2:'Файл 2' }}</button>
-                @endif
-                <br />
-                <br />
-                @if($entity->document3)
-                    <button class="download-btn">{{ $entity->name3?$entity->name3:'Файл 3' }}</button>
-                @endif
-                @if($entity->document4)
-                    <button class="download-btn">{{ $entity->name4?$entity->name4:'Файл 4' }}</button>
-                @endif
+                <div class="buttons-wrap">
+                    <div class="catalog-full__button-content">
+                        @if($entity->document1)
+                            <a href="{{ asset('uploads/catalog/files/' . $entity->document1) }}" class="download-btn">{{ $entity->name1?$entity->name1:'Файл 1' }}</a>
+                        @endif
+                        @if($entity->document2)
+                            <a href="{{ asset('uploads/catalog/files/' . $entity->document2) }}" class="download-btn">{{ $entity->name2?$entity->name2:'Файл 2' }}</a>
+                        @endif
+                    </div>
+                    <div class="catalog-full__button-content">
+                        @if($entity->document3)
+                            <a href="{{ asset('uploads/catalog/files/' . $entity->document3) }}" class="download-btn">{{ $entity->name3?$entity->name3:'Файл 3' }}</a>
+                        @endif
+                        @if($entity->document4)
+                            <a href="{{ asset('uploads/catalog/files/' . $entity->document4) }}" class="download-btn">{{ $entity->name4?$entity->name4:'Файл 4' }}</a>
+                        @endif
+                    </div>
+                </div>
 
+                <p>{!! $entity->content !!}</p>
+                <a class="post__back" href="{{URL::route('catalog.list',$entity->category_id)}}">@lang('catalog::index.back')</a>
+                @include('parts.social')
             </div>
             <div class="clear"></div>
         </div>

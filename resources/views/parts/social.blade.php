@@ -1,6 +1,3 @@
-@push('css')
-    <link href="/css/social-likes_birman.css" rel="stylesheet">
-@endpush
 
 @push('js')
     <script src="{{asset('js/social-likes.min.js')}}"></script>

@@ -5,8 +5,6 @@ return [
     'localization'=>true,
     "modules"=>[""=>"",
         "news"=>trans('news::admin.title'),
-        "articles"=>trans('articles::admin.title'),
-        "gallery"=>trans('gallery::admin.title'),
         "feedback"=>trans('feedback::admin.title'),
         "catalog"=>trans('catalog::admin.title'),
         "project"=>trans('project::admin.title')],
@@ -14,6 +12,5 @@ return [
         "inner"=>trans('tree::admin.templates.inner'),
         "index"=>trans('tree::admin.templates.index'),
         "list"=>trans('tree::admin.templates.list'),
-        "sidebarCategory"=>trans('tree::admin.templates.sidebarCategory'),
-        "listSidebarCategory"=>trans('tree::admin.templates.listSidebarCategory')],
+    ]
 ];

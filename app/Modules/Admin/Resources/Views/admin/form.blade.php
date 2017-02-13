@@ -23,7 +23,7 @@
     @yield('form_content')
 
     <div class="col-md-12">
-        {!! BootForm::submit(trans('admin::admin.save')) !!}
+        {!! BootForm::submit() !!}
     </div>
 
     {!! BootForm::close() !!}

@@ -1,7 +1,7 @@
 @if (count($items))
     <div class="news">
-        <h2 class="news-title"><a href="{!! route('news.list') !!}">@lang('news::index.title')</a></h2>
-        <a href="{!! route('news.list') !!}" class="more-link">@lang('news::index.titleAll')</a>
+        <h2 class="news-title"><a href="{!! route('news') !!}">@lang('news::index.title')</a></h2>
+        <a href="{!! route('news') !!}" class="more-link">@lang('news::index.titleAll')</a>
         <div class="news__items">
             @foreach($items as $item)
                 <div class="news__item">

@@ -44,7 +44,9 @@ abstract class Controller extends BaseController
         //Если не надо автоматически выводить последнюю крампу
         //$this->middleware('breadcrumbs:false');
         $this->middleware('og');
-        $this->middleware('meta');
+        //Выключил так как к страницам с дерева сайта итак применяется, вот модулю каталог мешается
+        /*$this->middleware('meta');*/
+
 
     }
 

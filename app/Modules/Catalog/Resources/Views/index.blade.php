@@ -3,8 +3,22 @@
     <div class="wrapper">
         @include('tree::breadcrumbs')
         <div class="wrapper__left">
-            <h1 class="main-title">{{ $pageTitle }}</h1>
+            <h1 class="main-title">{{ $meta->h1?$meta->h1:$pageTitle }}</h1>
             <div class="catalog__items">
+                <div class="catalog__items_category">
+                    @if(!Category::all()->isEmpty())
+                        <ul class="">
+                            @foreach(Category::all() as $item)
+                                @if(isset($category) && $category == $item->id)
+                                    <li class="active"><a href="{{ route('catalog.list',['category' => $item->id]) }}">{{ $item->title }}</a></li>
+                                @else
+                                    <li><a href="{{ route('catalog.list',['category' => $item->id]) }}">{{ $item->title }}</a></li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
+
                 @if (count($items))
                     @foreach($items as $item)
                         <div class="catalog__item">

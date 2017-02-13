@@ -51,6 +51,10 @@ return [
         'image/png',
         'image/gif',
         'application/pdf',
+        'application/msword',
+        'application/vnd.ms-excel',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
         'text/plain',
         'application/vnd',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document'

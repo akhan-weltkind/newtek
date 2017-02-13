@@ -22,10 +22,6 @@ class Slider extends Migration
 
             $table->text('preview');
 
-            $table->string('button');
-            $table->string('button_color');
-            $table->string('button_background');
-
             $table->string('link');
             $table->enum('link_type',['in','out']);
 

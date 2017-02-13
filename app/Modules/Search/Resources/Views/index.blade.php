@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <h1>@lang('search::index.title')</h1>
     <div class="b-search-results">
         @if (count($errors) > 0)
             @foreach ($errors as $error)
@@ -17,7 +16,10 @@
                 </p>
             </div>
             <div class="b-search-results__list">
+
                 @include('search::results', ['result' => $result])
+
+
             </div>
         @else
             @lang('search::index.nothing_found')

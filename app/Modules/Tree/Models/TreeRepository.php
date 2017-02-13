@@ -64,4 +64,10 @@ class TreeRepository
 
     }
 
+    public function getDepth($id){
+
+        return Model::whereId($id)->pluck('depth')->first();
+
+    }
+
 }

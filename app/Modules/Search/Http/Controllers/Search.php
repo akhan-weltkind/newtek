@@ -321,6 +321,17 @@ abstract class Search
     }
 
     /**
+     * Get formatted search result row content
+     *
+     * @param $row Collection Row from table
+     * @return string Formatted string
+     */
+    public function getContent($row)
+    {
+        return $this->highLight($row->{$this->titleField});
+    }
+
+    /**
      * Get formatted search result row title
      *
      * @param $row Collection Row from table

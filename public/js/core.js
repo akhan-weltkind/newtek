@@ -3,16 +3,6 @@ $(document).ready(function () {
 
     // Слайдер на Главной
     (function() {
-        $('.slider').slick({
-            slidesToScroll:1,
-            slidesToShow:1,
-            speed: 2000,
-            pauseOnHover:true,
-            arrows:true,
-            autoplay:true,
-            dots:true,
-            fade:true, 
-        });
 
         $('.slider').on('beforeChange', addAnimate);
 
@@ -82,7 +72,7 @@ $(document).ready(function () {
 
 
          // аккордион
-    $("#menuVertical > ul > li > a").on("click", function(){
+    $("#menuVertical > ul > li > button.menuVertical__show-submenu").on("click", function(){
         var XX=$(this).parent("li");
         if(!XX.hasClass("act")){
             $("#menuVertical > ul > li.act > ul").slideUp(400);
@@ -131,27 +121,26 @@ $(document).ready(function () {
     // модалка
     $(document).ready(function(){
         $(".modalbox").fancybox();
-        $("#f_contact").submit(function(e){
-            var url  = $(this).attr('action')
-                data = $(this).serialize();
+        $("#js-feedback").on("submit", "#f_contact",function(e){
+            var url     = $(this).attr('action'),
+                submit  = $('#f_send'),
+                data    = $(this).serialize();
 
             e.preventDefault();
-            console.log();
+
+            submit.attr('value','Отправка..');
+
             $.ajax({
                 type: 'POST',
                 url: url,
                 data: data,
                 success: function(data){
                     $('#js-feedback').html(data);
-                    console.log(data);
                 },
                 error: function (data) {
-                    //console.log(JSON.parse(data.responseText));
                     $('#js-feedback').html(data);
-                    console.log(data);
                 }
             });
-            console.log('submit');
 
         });
         /*$("#f_send").on("click", function(){

@@ -9,7 +9,7 @@ class SliderComposer
 
     public function compose(View $view){
         $slider = new Slider();;
-        $result = $slider::whereActive(1)->get();
+        $result = $slider::whereActive(1)->orderBy('priority', 'desc')->orderBy('created_at', 'desc')->get();
 
         $view->with('slider', $result);
     }
