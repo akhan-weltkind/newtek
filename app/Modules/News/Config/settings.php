@@ -1,7 +1,7 @@
 <?php
 
 return[
-    'title'=>trans('news::admin.title'),
+    'title'=>trans('news::index.title'),
     'localization'=>true,
 
 ];

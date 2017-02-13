@@ -1,6 +1,6 @@
 <?php
 return [
-    'title'=>trans('feedback::admin.title'),
+    'title'=>trans('feedback::index.title'),
     'localization'=>true
 
 ];

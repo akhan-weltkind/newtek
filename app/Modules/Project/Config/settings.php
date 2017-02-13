@@ -1,6 +1,6 @@
 <?php
 return [
 
-    'title'         => trans('project::admin.title'),
+    'title'         => trans('project::index.title'),
     'localization'  => true,
 ];

@@ -30,6 +30,10 @@ return[
         'fio'   =>'ФИО отправителя:',
         'email' => 'Email:',
         'message'   => 'Текст сообщения:'
+    ],
+
+    'admins' => [
+        'title' => 'Feedback'
     ]
 
 ];

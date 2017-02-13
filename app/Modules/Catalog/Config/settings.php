@@ -1,6 +1,6 @@
 <?php
 return [
 
-    'title'=>trans('catalog::admin.title'),
+    'title'=>trans('catalog::index.title'),
     'localization'=>true,
 ];
