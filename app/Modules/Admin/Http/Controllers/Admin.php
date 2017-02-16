@@ -129,7 +129,6 @@ abstract class Admin extends Controller
         $this->validate($request, $this->getRules($request, $id));
 
         $entity = $this->getModel()->findOrFail($id);
-
         $entity->update($request->all());
 
         $this->after($entity);

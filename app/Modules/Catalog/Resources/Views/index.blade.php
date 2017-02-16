@@ -7,7 +7,7 @@
             <div class="catalog__items">
                 <div class="catalog__items_category">
                     @if(!Category::all()->isEmpty())
-                        <ul class="">
+                        <ul>
                             @foreach(Category::all() as $item)
                                 @if(isset($category) && $category == $item->id)
                                     <li class="active"><a href="{{ route('catalog.list',['category' => $item->id]) }}">{{ $item->title }}</a></li>

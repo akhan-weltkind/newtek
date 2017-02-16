@@ -7,6 +7,7 @@ use App\Modules\Admin\Http\Controllers\Image;
 use App\Modules\Admin\Http\Controllers\Files;
 use App\Modules\Catalog\Models\Catalog;
 use App\Facades\Route;
+use Illuminate\Http\Request;
 
 class IndexController extends Admin
 {
@@ -23,6 +24,10 @@ class IndexController extends Admin
         return  [
             'title' => 'sometimes|required|max:255',
             'category_id' => 'sometimes|required|integer',
+            'document1'     => 'mimes:doc,docx,pdf,xlsx,xls|max:15360',
+            'document2'     => 'mimes:doc,docx,pdf,xlsx,xls|max:15360',
+            'document3'     => 'mimes:doc,docx,pdf,xlsx,xls|max:15360',
+            'document4'     => 'mimes:doc,docx,pdf,xlsx,xls|max:15360'
         ];
     }
 
@@ -31,6 +36,8 @@ class IndexController extends Admin
         if (Route::getAction() == 'store' || Route::getAction() == 'update') {
             $this->upload($entity);
             $this->uploadFiles($entity);
+
+
         }
 
         if (Route::getAction() == 'edit') {
@@ -38,8 +45,6 @@ class IndexController extends Admin
         }
 
     }
-
-
 
 
 

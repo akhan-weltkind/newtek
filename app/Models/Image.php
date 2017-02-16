@@ -28,10 +28,12 @@ trait Image{
 
     public function imagePath($slug , $field = false){
 
+
         if ($field) {
             $image = $this->{$field};
         }
         else {
+
             $image = $this->{$this->imageField()} ;
         }
         if (!$image){

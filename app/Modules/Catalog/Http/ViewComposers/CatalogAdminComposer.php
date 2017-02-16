@@ -13,7 +13,7 @@ class CatalogAdminComposer
             <table class="technical">
 		     					<thead>
 		     						<tr>
-		     							<td colspan="2">Электрические характеристики</td>
+		     							<td colspan="2">Технические характеристики</td>
 		     						</tr>
 		     					</thead>
 		     					<tbody>

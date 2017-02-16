@@ -46,7 +46,7 @@ class CategoryRepository
         return Model::where('parent_id', null)->first();
     }*/
 
-    public function getSelect($all = 'false')
+    public function getSelect($all = false)
     {
         $keyed = collect();
 

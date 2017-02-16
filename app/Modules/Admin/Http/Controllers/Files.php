@@ -53,8 +53,11 @@ trait Files
             if (Request::hasFile($field)) {
 
                 $validator = Validator::make(Request::instance()->all(), [$field => $cnf['validator']]);
+
                 if ($validator->fails()) {
-                    $this->throwValidationException(Request::getFacadeRoot(), $validator);
+
+                    $entity->{$cnf['field']} = "";
+                    /*$this->throwValidationException(Request::getFacadeRoot(), $validator);*/
                 }
 
                 $file = Request::file($field);

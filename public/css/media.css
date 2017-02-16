@@ -732,7 +732,8 @@ margin-bottom: 20px;
 }
 
 .contacts-right {
-width: 100%;
+width: 52%;
+float: left;
 }
 
 .b-form-item_type_captcha .b-form-item__input {
@@ -1271,6 +1272,32 @@ padding-top: 20px;
 
 .logo-index {
 background-size: 68px;
+}
+
+.contacts-right {
+width: 100%;
+float: none;
+}
+
+
+
+.catalog__items_category > ul > li.active {
+	position:relative;
+}
+
+.catalog__items_category > ul > li.active::before {
+    display: block;
+}
+
+.catalog__items_category > ul > li::before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    display: none;
+    background: #2d2e83;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 

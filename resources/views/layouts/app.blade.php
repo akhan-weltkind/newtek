@@ -47,12 +47,13 @@
 
         <link href="/css/basictable.css" rel="stylesheet">
         <link href="/css/social-likes_birman.css" rel="stylesheet">
-        <link href="/css/jquery.fancybox.css" rel="stylesheet">
+        <link href="/css/jquery.formstyler.css" rel="stylesheet">
         <link href="/css/slick.css" rel="stylesheet">
         <link href="/css/style.css" rel="stylesheet">
         <link href="/css/reset.css" rel="stylesheet">
         <link href="/css/media.css" rel="stylesheet">
         <link href="/css/fonts.css" rel="stylesheet">
+        <link href="/css/jquery.fancybox.css" rel="stylesheet">
 
         @stack('css')
 
@@ -125,10 +126,10 @@
 <script src="{{asset('js/jquery.spincrement.js')}}"></script>
 <script src="{{asset('js/masonry.pkgd.min.js')}}"></script>
 <script src="{{asset('js/imagesloaded.pkgd.js')}}"></script>
-<script src="{{asset('js/jquery.formstyler.js')}}"></script>
-<script src="{{asset('js/core.js')}}"></script>
 
 @stack('js')
+<script src="{{asset('js/jquery.formstyler.js')}}"></script>
+<script src="{{asset('js/core.js')}}"></script>
 
 <!--
         This page took {{ (microtime(true) - LARAVEL_START) }} seconds to render -->

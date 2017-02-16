@@ -3,6 +3,16 @@ $(document).ready(function () {
 
     // Слайдер на Главной
     (function() {
+        $('.slider').slick({
+            slidesToScroll:1,
+            slidesToShow:1,
+            speed: 2000,
+            pauseOnHover:true,
+            arrows:true,
+            autoplay:true,
+            dots:true,
+            fade:true, 
+        });
 
         $('.slider').on('beforeChange', addAnimate);
 
@@ -72,7 +82,7 @@ $(document).ready(function () {
 
 
          // аккордион
-    $("#menuVertical > ul > li > button.menuVertical__show-submenu").on("click", function(){
+    $("#menuVertical > ul > li > a").on("click", function(){
         var XX=$(this).parent("li");
         if(!XX.hasClass("act")){
             $("#menuVertical > ul > li.act > ul").slideUp(400);
@@ -93,68 +103,50 @@ $(document).ready(function () {
             });
     });
 
-         // Слайдер проекты
-    $('.project__slider').slick({
-        slidesToScroll:1,
-        slidesToShow:1,
-        pauseOnHover:true,
-        arrows:true,
-        dots:false,
-        // autoplay:true,
-
-    });
-
-    $(".single_image").fancybox();
-
-    $("a[rel=group]").fancybox({
-           'transitionIn' : 'none',
-            'transitionOut' : 'none',
-           'titlePosition' : 'over',
-            'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
-                return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-           }
+             // Слайдер проекты
+        $('.project__slider').slick({
+            slidesToScroll:1,
+            slidesToShow:1,
+            pauseOnHover:true,
+            arrows:true,
+            dots:false,
+            // autoplay:true,
+ 
         });
 
-    $('input, select').styler();
-
-
-    // модалка
-    $(document).ready(function(){
-        $(".modalbox").fancybox();
-        $("#js-feedback").on("submit", "#f_contact",function(e){
-            var url     = $(this).attr('action'),
-                submit  = $('#f_send'),
-                data    = $(this).serialize();
-
-            e.preventDefault();
-
-            submit.attr('value','Отправка..');
-
-            $.ajax({
-                type: 'POST',
-                url: url,
-                data: data,
-                success: function(data){
-                    $('#js-feedback').html(data);
-                },
-                error: function (data) {
-                    $('#js-feedback').html(data);
-                }
+        $(".single_image").fancybox();
+        $(".product-colorbox").fancybox();
+        $("a[rel=group]").fancybox({
+               'transitionIn' : 'none',
+                'transitionOut' : 'none',
+               'titlePosition' : 'over',
+                'titleFormat' : function(title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+               }
             });
 
+        $('input, select').styler();
+
+
+        // модалка
+        $(document).ready(function(){
+            $(".modalbox").fancybox();
+            $("#f_contact").submit(function(){ return false; });
+            $("#f_send").on("click", function(){
+                 
+                // тут дальнейшие действия по обработке формы
+                // закрываем окно, как правило делать это нужно после обработки данных
+                $("#f_contact").fadeOut("fast", function(){
+                    $(this).before("<p><strong>Ваше сообщение отправлено!</strong></p>");
+                    setTimeout("$.fancybox.close()", 1000);
+                });
+            });
         });
-        /*$("#f_send").on("click", function(){
-
-            // тут дальнейшие действия по обработке формы
-            // закрываем окно, как правило делать это нужно после обработки данных
-            /!*$("#f_contact").fadeOut("fast", function(){
-                $(this).before("<p><strong>Ваше сообщение отправлено!</strong></p>");
-                setTimeout("$.fancybox.close()", 1000);
-            });*!/
-        });*/
-    });
 
 
 
+    
+
+  
 });
 

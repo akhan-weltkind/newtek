@@ -25,6 +25,7 @@
 @endpush
 
 <div class="images-list">
+
     @if(isset($imageTitle))
         {!! BootForm::label($imageTitle) !!}
         @if(isset($helpBlock))
@@ -33,7 +34,7 @@
     @else
         {!! BootForm::label(trans('admin::admin.image')) !!}
         @if(isset($helpBlock))
-            <p class="help-block">{{ $helpBlock }}</p>
+            <p class="help-block">{!! $helpBlock  !!}</p>
         @endif
     @endif
 

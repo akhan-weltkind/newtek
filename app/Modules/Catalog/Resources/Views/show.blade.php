@@ -1,3 +1,7 @@
+@push('css')
+
+@endpush
+
 @extends('layouts.inner')
 
 @section('page_content')
@@ -12,7 +16,6 @@
                             <a  class="product-colorbox" href="{{ $entity->image_thumb }}">
                                 <img src="{{ $entity->image_thumb }}" alt="{{ $entity->title }}">
                             </a>
-
                         </div>
                     @endif
                     <div class="catalog__info">

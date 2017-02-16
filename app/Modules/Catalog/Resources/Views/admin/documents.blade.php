@@ -1,3 +1,65 @@
+@push('js')
+<script>
+    $(document).ready(function () {
+        changeFileInput(1);
+        changeFileInput(2);
+        changeFileInput(3);
+        changeFileInput(4);
+
+        $('.form-control-file-delete').click(function (e) {
+            var link    = $(this),
+                url     = link.attr('href'),
+                id      = link.attr('id'),
+                helpBlock = link.siblings('.help-block'),
+                answer;
+
+            e.preventDefault();
+
+            answer = confirm("Вы уверены что хотите удалить файл?");
+            if (answer) {
+                $.ajax({
+                    type: 'get',
+                    url: url,
+                    success: function(){
+                        var desc = $('#document' + id + 'text');
+                        desc.html('Выберите файл');
+                        desc.siblings().css("margin-left","-3px");
+                        link.hide();
+                        helpBlock.hide();
+                    }
+                });
+
+            }
+
+
+        });
+    });
+
+    function changeFileInput(index) {
+        $('#document' + index).change(function(){
+            var i,name;
+
+            if ($(this).val().lastIndexOf('\\')) {
+                i = $(this).val().lastIndexOf('\\') + 1;
+            } else {
+                i = $(this).val().lastIndexOf('/') + 1;
+            }
+
+            if ($(this).val().slice(i).length > 30) {
+                name = $(this).val().slice(i);
+                $('#document' + index +'text').text(name.substr(-30));
+            } else {
+                $('#document' + index +'text').text($(this).val().slice(i));
+            }
+        });
+
+        $('#document' + index +'desc').click(function () {
+            $('#document' + index).click();
+        });
+    }
+</script>
+@endpush
+
 @if ($entity->id)
         <div class="col-md-5">
             <div class="form-group">
@@ -10,15 +72,16 @@
                         Удалить
                     </a>
                 @endif
-                <a class="form-control-file-desc" id="document1desc" style="{{ !$entity->document1?'margin-left:-3px;':null }}">Выбрать</a>
-            </div>
-            <div class="help-block">
-                @if($entity->document1)
-                    {{ $entity->document1 }}({{ round(File::size('uploads/catalog/files/' . $entity->document1)/1024,0) }} КБ)
-                    <a href="/uploads/catalog/files/{{ $entity->document1 }}" >Скачать</a>
-                @endif
 
+                <a class="form-control-file-desc" id="document1desc" style="{{ !$entity->document1?'margin-left:-3px;':null }}">Выбрать</a>
+                <div class="help-block">
+                    @if($entity->document1)
+                        {{ $entity->document1 }}({{ round(File::size('uploads/catalog/files/' . $entity->document1)/1024,0) }} КБ)
+                        <a href="/uploads/catalog/files/{{ $entity->document1 }}" >Скачать</a>
+                    @endif
+                </div>
             </div>
+
         </div>
 
         <div class="col-md-5 col-md-offset-1">
@@ -38,13 +101,13 @@
                     </a>
                 @endif
                 <a class="form-control-file-desc" id="document2desc" style="{{ !$entity->document2?'margin-left:-3px;':null }}">Выбрать</a>
-            </div>
-            <div class="help-block">
-                @if($entity->document2)
-                    {{ $entity->document2 }}
-                    ({{ round(File::size('uploads/catalog/files/' . $entity->document2)/1024,0) }} КБ)
-                    <a href="/uploads/catalog/files/{{ $entity->document2 }}" >Скачать</a>
-                @endif
+                <div class="help-block">
+                    @if($entity->document2)
+                        {{ $entity->document2 }}
+                        ({{ round(File::size('uploads/catalog/files/' . $entity->document2)/1024,0) }} КБ)
+                        <a href="/uploads/catalog/files/{{ $entity->document2 }}" >Скачать</a>
+                    @endif
+                </div>
             </div>
         </div>
 
@@ -113,64 +176,3 @@
 @else
     <p class="help-block">Сохраните запись, чтобы добавить изображения</p>
 @endif
-
-@push('js')
-<script>
-    $(document).ready(function () {
-        changeFileInput(1);
-        changeFileInput(2);
-        changeFileInput(3);
-        changeFileInput(4);
-
-        $('.form-control-file-delete').click(function (e) {
-            var link    = $(this),
-                url     = link.attr('href'),
-                id      = link.attr('id'),
-                answer;
-
-            e.preventDefault();
-
-            answer = confirm("Вы уверены что хотите удалить файл?");
-            if (answer) {
-                $.ajax({
-                    type: 'get',
-                    url: url,
-                    success: function(){
-                        var desc = $('#document' + id + 'text');
-                        desc.html('Выберите файл');
-                        desc.siblings().css("margin-left","-3px");
-                        link.hide();
-
-                        console.log('aasdasd');
-                    }
-                });
-            }
-
-
-        });
-    });
-
-   function changeFileInput(index) {
-       $('#document' + index).change(function(){
-           var i,name;
-
-           if ($(this).val().lastIndexOf('\\')) {
-               i = $(this).val().lastIndexOf('\\') + 1;
-           } else {
-               i = $(this).val().lastIndexOf('/') + 1;
-           }
-
-          if ($(this).val().slice(i).length > 30) {
-               name = $(this).val().slice(i);
-              $('#document' + index +'text').text(name.substr(-30));
-          } else {
-              $('#document' + index +'text').text($(this).val().slice(i));
-          }
-       });
-
-       $('#document' + index +'desc').click(function () {
-           $('#document' + index).click();
-       });
-   }
-</script>
-@endpush
