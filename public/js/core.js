@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Слайдер на Главной
     (function() {
-        $('.slider').slick({
+        /*$('.slider').slick({
             slidesToScroll:1,
             slidesToShow:1,
             speed: 2000,
@@ -11,8 +11,8 @@ $(document).ready(function () {
             arrows:true,
             autoplay:true,
             dots:true,
-            fade:true, 
-        });
+            fade:true
+        });*/
 
         $('.slider').on('beforeChange', addAnimate);
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
 
 
          // аккордион
-    $("#menuVertical > ul > li > a").on("click", function(){
+    $("#menuVertical > ul > li > button.menuVertical__show-submenu").on("click", function(){
         var XX=$(this).parent("li");
         if(!XX.hasClass("act")){
             $("#menuVertical > ul > li.act > ul").slideUp(400);
@@ -130,16 +130,40 @@ $(document).ready(function () {
 
         // модалка
         $(document).ready(function(){
-            $(".modalbox").fancybox();
-            $("#f_contact").submit(function(){ return false; });
-            $("#f_send").on("click", function(){
-                 
-                // тут дальнейшие действия по обработке формы
-                // закрываем окно, как правило делать это нужно после обработки данных
-                $("#f_contact").fadeOut("fast", function(){
-                    $(this).before("<p><strong>Ваше сообщение отправлено!</strong></p>");
-                    setTimeout("$.fancybox.close()", 1000);
+            
+            function send() {
+                $('#f_contact').submit(function (e) {
+                    e.preventDefault();
+                    var form    = $(this),
+                        url     = $(this).attr('action'),
+                        data    = form.serialize(),
+                        box     = $('#js-feedback'),
+                        submit  = $('#f_send');
+
+                    submit.val('Отправка...');
+
+                    $.ajax({
+                        type: 'post',
+                        url: url,
+                        data:data,
+                        success: function(responce){
+                            box.html(responce);
+                            submit.val('Отправить');
+                            send();
+                        },
+                        error: function (responce) {
+                            console.log(responce);
+                        }
+                    });
                 });
+            }
+
+            $(".modalbox").fancybox({
+                ajax: {
+                    complete: function() {
+                        send();
+                    }
+                }
             });
         });
 

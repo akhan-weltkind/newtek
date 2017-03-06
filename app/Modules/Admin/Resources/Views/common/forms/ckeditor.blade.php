@@ -8,7 +8,6 @@
         filebrowserImageUploadUrl: '/{{ config('cms.uri') }}/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
         filebrowserBrowseUrl: '/{{ config('cms.uri') }}/laravel-filemanager?type=Files',
         filebrowserUploadUrl: '/{{ config('cms.uri') }}/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}',
-        removeButtons: 'Underline',
         allowedContent: true,
         height: "350px"
     });

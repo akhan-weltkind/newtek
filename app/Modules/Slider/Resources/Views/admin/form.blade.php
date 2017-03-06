@@ -15,6 +15,8 @@
     <div class="col-md-5 col-md-offset-1">
         {!! BootForm::text('link', trans('slider::admin.fields.link'), null , [ 'placeholder' => 'https://www.google.com'] ) !!}
         {!! BootForm::select('link_type', trans('slider::admin.fields.linkType'),$linkTypes) !!}
+        {!! BootForm::select('background_button', trans('slider::admin.fields.buttonBackground'),$colors) !!}
+        {!! BootForm::select('color_button', trans('slider::admin.fields.buttonColor'),$colors) !!}
         {!! BootForm::hidden('active', 0) !!}
         {!! BootForm::checkbox('active', 'Опубликовать', 1) !!}
     </div>

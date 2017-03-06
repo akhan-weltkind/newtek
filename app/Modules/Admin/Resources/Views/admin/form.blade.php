@@ -7,7 +7,8 @@
             'fields' => [
                 ['id' => 'content'],
                 ['id' => 'technical'],
-                ['id' => 'electrical']
+                ['id' => 'electrical'],
+                ['id' => 'preview_widget']
             ]
         ])
 @endsection

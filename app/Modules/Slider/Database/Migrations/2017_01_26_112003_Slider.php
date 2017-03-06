@@ -19,6 +19,8 @@ class Slider extends Migration
 
             $table->text('title');
             $table->string('title_color');
+            $table->string('background_button');
+            $table->string('color_button');
 
             $table->text('preview');
 

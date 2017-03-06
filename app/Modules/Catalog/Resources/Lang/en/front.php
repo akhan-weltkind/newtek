@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Catalog',
-    'code'  => 'Vendor code:',
-    'size'  => 'Size:',
-    'power' => 'Power:'
+    'code'  => 'Vendor Code:',
+    'size'  => 'Dimensions:',
+    'power' => 'Manifacturing Capacity:'
 ];

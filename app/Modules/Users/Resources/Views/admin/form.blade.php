@@ -34,7 +34,6 @@
 
 
     <div class="col-md-12">
-        {{ dump(trans('admin::admin.save'))  }}
         {!! BootForm::submit(trans('admin::admin.save')) !!}
     </div>
 

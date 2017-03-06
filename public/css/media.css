@@ -239,6 +239,7 @@ width: 719px;
 padding-top: 13px;
 background: #2d2e83;
 padding: 5px 10px 0 10px;
+display:table;
 }
 
 .menu-item {
@@ -537,11 +538,16 @@ line-height: 23px;
 .details__item.details__item_more {
 background-position: -19px 51px;
 background-size: 51%;
+padding-left: 124px;
 }
 
 .details__item.details__item_sert {
 background-position: -38px 51px;
 background-size: 51%;
+}
+
+.wrapper__right .details__item.details__item_sert.eng {
+    background-position: -60px 107px;
 }
 
 .footer__logo {
@@ -700,6 +706,8 @@ font-size: 18px;
 .wrapper__right .details__item.details__item_sert {
 margin: 0 0 30px 0;
 padding: 26px 0 0 16px;
+background-position: -45px 112px;
+    background-size: 185px;
 }
 
 .project__slider  .slick-prev {
@@ -799,6 +807,12 @@ background-position: 0 0;
 
 .logo-index {
 background-size: 118px;
+}
+
+.details__item.details__item_sert.eng {
+    background-position: -43px 54px;
+}
+
 }
 
 @media screen and (max-width:739px) {

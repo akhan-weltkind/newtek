@@ -2,8 +2,8 @@
 return[
     'title'=>'Feedback',
     'contacts'=>'Our contacts:',
-    'location'=>'We are located at:',
-    'form_title'=>'Message us:',
+    'location'=>'Address:',
+    'form_title'=>'Send us your feedback:',
 
     'lat' => 'Latitude',
     'lng' => 'Longitude',
@@ -18,18 +18,18 @@ return[
     'message'=>'Message',
     'message_placeholder'=>'Enter a text',
 
-    'captcha'=>'Captcha',
-    'captcha_placeholder'=>'Enter the digits on the image',
+    'captcha'=>'Spam filter',
+    'captcha_placeholder'=>'Enter the text from the picture',
     'send'=>'Send',
 
-    'success' => 'Your message was successfully sent. Our managers will contact you shortly.',
+    'success' => 'Your message was successfully sent. Our managers will contact you as soon as possible.',
 
     'emails' => [
-        'title' => 'Сообщение с сайта newtek.kg',
-        'theme' => 'Тема:',
-        'fio'   =>'ФИО отправителя:',
+        'title' => 'Message from newtek.kg',
+        'theme' => 'Theme:',
+        'fio'   =>'Name:',
         'email' => 'Email:',
-        'message'   => 'Текст сообщения:'
+        'message'   => 'Message:'
     ],
 
     'admins' => [

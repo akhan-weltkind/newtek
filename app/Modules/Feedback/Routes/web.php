@@ -8,4 +8,5 @@
 
     Route::post('feedback', 'IndexController@store')->name('feedback.store');
     Route::post('feedback/modal', 'IndexController@modal')->name('feedback.modal');
+    Route::get('feedback/modal', 'IndexController@getModal')->name('feedback.getModal');
 });

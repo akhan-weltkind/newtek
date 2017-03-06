@@ -70,6 +70,7 @@ class CategoryRepository
     public function all(){
         return Category::all();
     }
+
     public function getName($id){
         $category = Category::where('id',$id)->first();
         return $category->title;
@@ -79,6 +80,22 @@ class CategoryRepository
 
 
         return Category::whereId($id)->first();
+    }
+
+    public function getWidget($id){
+
+        if(!$id){
+            return false;
+        }
+
+        $widget = Category::where('id',$id)->pluck('preview_widget')->first();
+
+        if ($widget) {
+            return $widget;
+        }
+        else {
+            return false;
+        }
     }
 
 }

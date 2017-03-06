@@ -25,6 +25,7 @@ return [
         'black'     => 'Black',
         'purple'    => 'Purple',
         'yellow'    => 'Yellow',
-        'blue'      => 'Blue'
+        'blue'      => 'Blue',
+        'green'      => 'Green',
     ]
 ];

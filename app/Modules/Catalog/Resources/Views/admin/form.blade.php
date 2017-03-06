@@ -41,7 +41,6 @@
 
     <div class="col-md-12">
         {!! BootForm::textarea('content', 'Полный текст', null) !!}
-
     </div>
 
     <div class="col-md-12">

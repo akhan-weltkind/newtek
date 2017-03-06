@@ -45,6 +45,8 @@
                                     target="_blank"
                                 @endif
                             @endif
+
+                            style="background: {{ $slide->background_button}}; color: {{ $slide->color_button }};"
                         >
                             @lang('slider::slider.read_more')
                         </a>

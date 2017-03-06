@@ -1,3 +1,4 @@
+<div class="feedback" id="js-feedback">
     {!! Form::open(['id' => 'f_contact','action' => '\App\Modules\Feedback\Http\Controllers\IndexController@modal'])  !!}
         <h6>@lang('feedback::index.form_title')</h6>
         @include('feedback::main-errors')
@@ -6,6 +7,7 @@
 
             <div class="b-form__item">
                 <div class="b-form-item b-form-item_type_text b-form-item_style_default
+
                     {{ $errors->has('name')?'b-form-item_status_error ':null }}">
                     <label for="name" class="b-form-item__label">@lang('feedback::index.name')
                         <span class="form-item__label_required">*</span>
@@ -65,15 +67,13 @@
                     <div class="b-form-item__input-image">{!! captcha_img('flat') !!}</div>
                     <div class="b-form-item__input">
                         <input type="text" name="captcha" id="captcha" @lang('feedback::index.captcha_placeholder')>
+                        @if ($errors->has('captcha'))
+                            <ul class="b-form__errors">
+                                <li>{{ $errors->first('captcha') }}</li>
+                            </ul>
+                        @endif
                     </div>
-                    @if ($errors->has('captcha'))
-                        <br />
-                        <br />
-                        <br />
-                        <ul class="b-form__errors">
-                            <li>{{ $errors->first('captcha') }}</li>
-                        </ul>
-                    @endif
+
                     <div class="clear"></div>
                 </div>
             </div>
@@ -82,3 +82,4 @@
             </div>
         </div>
     {!! Form::close() !!}
+</div>

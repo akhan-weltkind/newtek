@@ -62,6 +62,13 @@
                     <p>@lang('catalog::index.no_records')</p>
                 @endif
             <div class="clear"></div>
+            <div>
+                @if(isset($category))
+                    @if($widget = Category::getWidget($category))
+                        {!! $widget !!}
+                    @endif
+                @endif
+            </div>
         </div>
         </div>
         <div class="wrapper__right">

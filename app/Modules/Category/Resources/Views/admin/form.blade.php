@@ -17,6 +17,11 @@
 <div class="col-md-6">
     {!! BootForm::text('title', trans('category::admin.title_page')) !!}
 </div>
+<div class="clearfix"></div>
+
+<div class="col-md-12">
+    {!! BootForm::textarea('preview_widget', trans('category::admin.preview'), null) !!}
+</div>
 
 @include('admin::common.forms.seo')
 

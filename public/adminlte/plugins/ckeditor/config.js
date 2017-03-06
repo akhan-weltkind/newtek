@@ -12,8 +12,6 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
         { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
         { name: 'insert', items: [ 'Image',  'Table', 'Flash', 'Youtube', 'HorizontalRule', 'SpecialChar', 'Iframe' ] },
-        '/',
-        { name: 'about', items: [ 'About' ] },
-        { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] }
+        { name: 'about', items: [ 'About' ] }
     ];
 };

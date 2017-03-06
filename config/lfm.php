@@ -2,7 +2,7 @@
 
 return [
     // If true, the uploaded file will be renamed to uniqid() + file extension.
-    'rename_file'           => true,
+    'rename_file'           => false,
 
     // If rename_file set to false and this set to true, then non-alphanumeric characters in filename will be replaced.
     'alphanumeric_filename' => true,
@@ -26,7 +26,7 @@ return [
     // NOTE: make sure to use an unique field.
     'user_field'            => 'id',
 
-    'shared_folder_name'    => 'shares',
+    'shared_folder_name'    => '/',
     'thumb_folder_name'     => 'thumbs',
 
     'images_dir'            => 'public/uploads/images/',

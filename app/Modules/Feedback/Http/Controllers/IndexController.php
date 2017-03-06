@@ -54,6 +54,11 @@ class IndexController extends Controller
 
     }
 
+    public function getModal(){
+        echo view('feedback::main');
+        die;
+    }
+
     public function store(Request $request){
 
         $this->validate($request, $this->getRules($request), $this->getMessages());
@@ -96,8 +101,8 @@ class IndexController extends Controller
 
     public function getMessages(){
         return [
-            'required'=>'Это поле обязательно для заполнения',
-            'email'=>'Укажите корректный электронный адрес'
+            'required'=>trans('feedback::validation.required'),
+            'email'=>trans('feedback::validation.email'),
         ];
     }
 

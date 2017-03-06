@@ -89,10 +89,7 @@
                             @include('common.languages')
                             <div class="header__contacts">
                                 <span class="header__contacts_phone">{!! widget('head.phone') !!}</span>
-                                <a class="header__contacts_feedback modalbox" href="#js-feedback">@lang('index.feedback')</a>
-                                <div class="feedback" id="js-feedback">
-                                    @include('feedback::main')
-                                </div>
+                                <a class="header__contacts_feedback modalbox fancybox.ajax" href="{{ route('feedback.getModal') }}" {{--href="#js-feedback"--}}>@lang('index.feedback')</a>
                                 <a href="{{ home() }}/contacts" class="header__contacts_buy">@lang('index.where_buy')</a>
                                 @include('search::main')
                             </div>
